@@ -548,6 +548,20 @@ footer small a{color:#555;text-decoration:none}
   <a class="ft-logo" href="#">blagica bottigliero</a>
   <small>© 2025 · <a href="https://zlato.co" target="_blank">zlato.co</a> · Metro Detroit, MI</small>
 </footer>
-
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('mobile-open');
+  });
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('mobile-open');
+    });
+  });
+</script>
 </body>
 </html>
