@@ -6,15 +6,7 @@
 <title>Blagica Bottigliero — Growth Marketer. Builder. Detroit.</title>
 <link rel="icon" href="favicon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-.hamburger{display:none;flex-direction:column;justify-content:space-between;width:24px;height:18px;background:none;border:none;cursor:pointer;padding:0}
-.hamburger span{display:block;height:2px;background:var(--black);transition:all .3s}
-.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-@media(max-width:960px){
-  .hamburger{display:flex}
-  .nav-links.mobile-open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:white;border-bottom:1px solid #f0e0e8;padding:1.5rem 2rem;gap:1.25rem;z-index:99}
-}  
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--pink:#D4176A;--pink-light:#FDE8F2;--pink-pale:#FFF5FA;--black:#0F0F0F;--dark:#2A2A2A;--gray:#666;--off-white:#FEFCFD}
@@ -195,6 +187,15 @@ footer small a{color:#555;text-decoration:none}
   #contact{padding:3rem 1.5rem}
   footer{flex-direction:column;gap:.75rem;text-align:center;padding:1.5rem}
 }
+  .hamburger{display:none;flex-direction:column;justify-content:space-between;width:24px;height:18px;background:none;border:none;cursor:pointer;padding:0}
+.hamburger span{display:block;height:2px;background:var(--black);transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media(max-width:960px){
+  .hamburger{display:flex}
+  .nav-links.mobile-open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:white;border-bottom:1px solid #f0e0e8;padding:1.5rem 2rem;gap:1.25rem;z-index:99}
+}  
 </style>
 </head>
 <body>
