@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>I Turn 50 in April. Fast Company Says I'm the Future of Work. — Blagica Bottigliero</title>
+  <meta name="description" content="A wake-up call for every Gen X woman who thinks she missed the window." />
+  <meta property="og:title" content="I Turn 50 in April. Fast Company Says I'm the Future of Work. I've Been Living Proof for Months." />
+  <meta property="og:description" content="A wake-up call for every Gen X woman who thinks she missed the window." />
+  <meta property="og:url" content="https://blagica.com/blog/vibe-coding-at-50.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  ARTICLE — EDITING GUIDE                            ║
+  ║                                                      ║
+  ║  TO USE AS A TEMPLATE FOR NEW POSTS:                 ║
+  ║  1. Save a copy as your-post-name.html               ║
+  ║  2. Update <title> and <meta> tags above             ║
+  ║  3. Update ARTICLE HEADER section below              ║
+  ║  4. Replace ARTICLE BODY with your content           ║
+  ║                                                      ║
+  ║  BODY ELEMENTS:                                      ║
+  ║  <p>               — paragraph                       ║
+  ║  <h2>              — section heading                 ║
+  ║  <blockquote>      — pull quote                      ║
+  ║  <hr class="section-break"> — visual divider         ║
+  ║  <strong> / <em>   — bold / italic                   ║
+  ╚══════════════════════════════════════════════════════╝
+  -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #E8A0A8;
+      --pink-deep:  #C45C72;
+      --pink-pale:  #FDF0F2;
+      --ink:        #1A1118;
+      --ink-soft:   #5A4A52;
+      --rule:       #EAD8DC;
+      --white:      #FFFFFF;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5vw;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--pink-deep); }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 680px; margin: 0 auto; padding: 0 5vw; }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3rem;
+    }
+    .article-category {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pink-deep);
+      margin-bottom: 1rem;
+    }
+    .article-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .article-header h1 em { font-style: italic; color: var(--pink-deep); }
+    .article-deck {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .article-meta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    .author-line { display: flex; align-items: center; gap: 0.6rem; }
+    .author-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 0.9rem;
+      color: white; flex-shrink: 0;
+    }
+    .author-name { font-size: 0.85rem; font-weight: 500; color: var(--ink); }
+    .meta-sep { color: var(--rule); }
+    .article-date, .read-time { font-size: 0.82rem; color: var(--ink-soft); }
+
+    /* HERO */
+    .article-hero {
+      background: linear-gradient(150deg, var(--pink) 0%, var(--pink-deep) 100%);
+      border-radius: 3px;
+      height: 300px;
+      margin-bottom: 3rem;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 5rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ARTICLE BODY */
+    .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink); margin-bottom: 4rem; }
+    .article-body p { margin-bottom: 1.6rem; }
+    .article-body h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.65rem; line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin: 2.75rem 0 1rem;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--pink-deep);
+      margin: 2.5rem 0;
+      padding: 1.25rem 1.75rem;
+      background: var(--pink-pale);
+      border-radius: 0 3px 3px 0;
+    }
+    .article-body blockquote p {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem; line-height: 1.5;
+      font-style: italic; color: var(--ink); margin: 0;
+    }
+    .article-body a { color: var(--pink-deep); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { text-decoration: none; }
+    .article-body strong { font-weight: 500; }
+    .article-body em { font-style: italic; }
+    hr.section-break { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+    .originally-published {
+      font-size: 0.82rem; color: var(--ink-soft);
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--rule); border-radius: 2px;
+      margin-bottom: 2.5rem; background: #fafafa;
+    }
+    .originally-published a { color: var(--pink-deep); }
+
+    /* ARTICLE FOOTER */
+    .article-footer { border-top: 1px solid var(--rule); padding: 2.5rem 0; margin-bottom: 4rem; }
+    .tags-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .tag {
+      background: var(--pink-pale); color: var(--pink-deep);
+      border: 1px solid var(--rule); padding: 0.25rem 0.75rem;
+      border-radius: 2px; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .author-card {
+      background: var(--pink-pale); border: 1px solid var(--rule);
+      border-radius: 3px; padding: 2rem;
+      display: flex; gap: 1.5rem; align-items: flex-start;
+    }
+    .author-avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+      color: white; flex-shrink: 0;
+    }
+    .author-info h4 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .author-info p { font-size: 0.88rem; line-height: 1.6; color: var(--ink-soft); margin-bottom: 0.75rem; }
+    .author-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .author-links a { font-size: 0.78rem; font-weight: 500; color: var(--pink-deep); text-decoration: none; letter-spacing: 0.04em; }
+    .author-links a:hover { text-decoration: underline; }
+
+    /* BACK LINK */
+    .back-row { padding: 0 0 4rem; text-align: center; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-soft);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--pink-deep); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--rule); padding: 2rem 5vw;
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    footer p { font-size: 0.8rem; color: var(--ink-soft); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    footer a { font-size: 0.8rem; color: var(--pink-deep); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* FADE IN */
+    .fade-up { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      .author-card { flex-direction: column; gap: 1rem; }
+      .nav-links { gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="https://blagica.com">Blagica</a>
+  <ul class="nav-links">
+    <li><a href="https://blagica.com">Home</a></li>
+    <li><a href="https://blagica.com/#work">Work</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="https://zlato.co" target="_blank" rel="noopener">Zlato ↗</a></li>
+  </ul>
+</nav>
+
+<main class="article-wrap">
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header fade-up">
+    <p class="article-category">Vibe Coding · Gen X · Women in Tech</p>
+    <h1>I Turn 50 in April. Fast Company Says I'm the Future of Work. I've Been <em>Living Proof</em> for Months.</h1>
+    <p class="article-deck">A wake-up call for every Gen X woman who thinks she missed the window.</p>
+    <div class="article-meta">
+      <div class="author-line">
+        <div class="author-dot">B</div>
+        <span class="author-name">Blagica Bottigliero</span>
+      </div>
+      <span class="meta-sep">·</span>
+      <span class="article-date">March 2026</span>
+      <span class="meta-sep">·</span>
+      <span class="read-time">5 min read</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="article-hero fade-up">✦</div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body fade-up">
+
+    <p class="originally-published">
+      Originally published on <a href="https://medium.com/@blagica/i-turn-50-in-april-fast-company-says-im-the-future-of-work-i-ve-been-living-proof-for-months-e34e7325dae9" target="_blank" rel="noopener">Medium ↗</a>
+    </p>
+
+    <p>I read the <a href="https://www.fastcompany.com/91505607/why-women-over-50-are-the-future-of-work-in-the-age-of-ai" target="_blank" rel="noopener"><em>Fast Company</em> piece on why women over 50 are the future of work in the age of AI</a> and I laughed — not because it was wrong, but because someone finally said out loud what I've been living in real time.</p>
+
+    <p>I turn 50 in April. And I have never felt more capable, more dangerous, or more lit up about what I'm building than I do right now.</p>
+
+    <p>Let me tell you what that actually looks like in practice, because theory is nice and think pieces are great, but I want you to see the receipts.</p>
+
+    <h2>The article talks about adaptability. Let me show you mine.</h2>
+
+    <p>The <em>Fast Company</em> piece makes the point that women over 50 have spent years learning to unlearn — changing sectors, rebuilding confidence, proving themselves over and over again in rooms that weren't always built for them. They know how to learn, unlearn and relearn. They are used to adapting. They are used to having to prove themselves again.</p>
+
+    <p>I was on the first eMarketing team at Orbitz before most people knew what a dot-com was. I was the first Global Social Media Director at Motorola Mobility. The <em>first</em> Social Media Director at Target (interesting opportunity and the wrong time…at the height of Target's first data breach). A founding strategy team member at Edelman Digital. I co-founded a virtual wine tasting platform called Bottles Nation before "virtual" was a buzzword we were all forced to learn during a pandemic.</p>
+
+    <p>Every single one of those roles required me to walk into a room, understand something brand new, translate it for skeptics and build something where nothing existed before. That is not a résumé flex. That is a muscle. And that muscle doesn't atrophy — it compounds.</p>
+
+    <p>Last year, I sat down and started vibe coding. Building actual websites. Using AI as my co-developer. And I didn't just dip a toe in — I built two client sites in a single weekend. I built automations and rules-based marketing elements that replace at least two people. I'm building life ops tools for me and a bunch of other women. I'm about to launch a digital children's book that's been in Notes Mode since 2014. All of it, simultaneously, using these tools.</p>
+
+    <p>The article is right: I'm not afraid to adapt. Life didn't give me that option.</p>
+
+    <h2>We don't just have experience. We have <em>layered</em> experience.</h2>
+
+    <p>Here's what I think gets missed in the conversation about women our age and technology: it's not just that we have years of experience in specific verticals. It's that we have <em>utility</em> across life stages in ways that make us uniquely equipped to solve real problems with these tools.</p>
+
+    <p>I'm not just a strategist. I'm a mom. I've been the sandwich generation in real time — being present for aging parents while raising kids, running a household while running a business. I understand the mental load, the calendar chaos, the "I need a solution that actually works at 10pm when I'm exhausted" reality that a 27-year-old building a productivity app may never consider.</p>
+
+    <p>Companies that exclude women over 50 from the table are designing for a world that no longer exists. And I'd add: tools built without us are solving problems they've never had to live.</p>
+
+    <p>When I build something now — a website for an auto exec, a content strategy for a brand, a framework for a client — I'm drawing on two and a half decades of marketing, tech, media, motherhood, reinvention and the very specific intelligence that comes from having navigated all of it at once. AI doesn't have that. AI amplifies it.</p>
+
+    <h2>The article talks about judgment. This is where we are actually unbeatable.</h2>
+
+    <p>AI is exceptional at generating content, processing data, and automating routine tasks. What it can't do is read a room, weigh competing values, or make a judgment call under genuine uncertainty.</p>
+
+    <p>I know when a client pitch is off before I can articulate why. I know when a brand voice is lying. I know when a "growth strategy" is actually just noise dressed up in a deck. That's not intuition — that's pattern recognition built over decades of watching what actually works versus what sounds good in a conference room.</p>
+
+    <blockquote>
+      <p>When I pair that judgment with AI tools, I move faster and smarter than I ever could alone. And I move faster than someone who has the tool but not the context.</p>
+    </blockquote>
+
+    <h2>Here's my real wake-up call for you.</h2>
+
+    <p>If you are a Gen X woman reading this and you've been telling yourself you're too late, too behind, too far from tech to learn this — I need you to hear me:</p>
+
+    <p><strong>You are not behind. You are exactly on time. And you have assets that no one can replicate or automate.</strong></p>
+
+    <p>What I've found, over and over again, is this: the hardest part isn't the technology. The hardest part is the story you're telling yourself about the technology. Once you sit with someone who is already doing the work — someone who is actually vibe coding, actually building, actually using these tools to create real things — the fear evaporates. Not because it's easy, but because you realize your brain already knows how to do hard things. You've been doing hard things your whole life.</p>
+
+    <p>And once you show a woman with our experience what these tools can actually do? What becomes possible?</p>
+
+    <p>Sky is the limit doesn't even cover it.</p>
+
+    <hr class="section-break" />
+
+    <p>I'm going to be 50 in April. I'm building websites, launching platforms, writing a book, running a consultancy, and using AI every single day as a collaborator. Not because I'm exceptional. Because I refused to accept the story that this wasn't for me.</p>
+
+    <p>The <em>Fast Company</em> piece frames us as the future of work. I'd push that further: we're not just the future. We're already here, already building, already proving it.</p>
+
+    <p><strong>The only question is whether you're going to join us.</strong></p>
+
+  </article>
+
+  <!-- ARTICLE FOOTER -->
+  <footer class="article-footer fade-up">
+    <div class="tags-row">
+      <span class="tag">Vibe Coding</span>
+      <span class="tag">Gen X</span>
+      <span class="tag">Women in Tech</span>
+      <span class="tag">Women</span>
+      <span class="tag">Careers</span>
+    </div>
+    <div class="author-card">
+      <div class="author-avatar">B</div>
+      <div class="author-info">
+        <h4>Blagica Bottigliero</h4>
+        <p>Emmy-winning media creator and fractional growth strategist with 25+ years at the intersection of marketing, technology, and culture. Founder of Zlato. Building things at 50.</p>
+        <div class="author-links">
+          <a href="https://blagica.com">blagica.com</a>
+          <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co</a>
+          <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium</a>
+          <a href="https://www.linkedin.com/in/blagicabottigliero/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-row fade-up">
+    <a class="back-link" href="/blog/">← All Posts</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Blagica Bottigliero</p>
+  <div class="footer-links">
+    <a href="https://blagica.com">blagica.com</a>
+    <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co</a>
+    <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium ↗</a>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+      }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
