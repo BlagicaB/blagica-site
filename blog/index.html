@@ -1,1 +1,385 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Blagica Bottigliero</title>
+  <meta name="description" content="Thoughts on vibe coding, growth marketing, Gen X life, and building things as a soon-to-be-50 woman in tech." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  BLOG INDEX — EDITING GUIDE                         ║
+  ║                                                      ║
+  ║  TO ADD A NEW POST:                                  ║
+  ║  1. Copy one POST CARD block below                   ║
+  ║  2. Update: href, category, title, excerpt, date     ║
+  ║  3. Newest post goes at the TOP of the grid          ║
+  ║                                                      ║
+  ║  TO UPDATE THE FEATURED POST:                        ║
+  ║  Edit the FEATURED POST block                        ║
+  ║                                                      ║
+  ║  ARTICLE FILES live in this same /blog/ folder.      ║
+  ║  Name them clearly: vibe-coding-at-50.html etc.      ║
+  ╚══════════════════════════════════════════════════════╝
+  -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #E8A0A8;
+      --pink-deep:  #C45C72;
+      --pink-pale:  #FDF0F2;
+      --ink:        #1A1118;
+      --ink-soft:   #5A4A52;
+      --rule:       #EAD8DC;
+      --white:      #FFFFFF;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5vw;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--pink-deep); }
+
+    /* PAGE HEADER */
+    .page-header {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 5vw 3.5rem;
+    }
+    .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pink-deep);
+      margin-bottom: 1rem;
+    }
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 6vw, 4.75rem);
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+    }
+    .page-header h1 em { font-style: italic; color: var(--pink-deep); }
+    .page-header .deck {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      max-width: 520px;
+    }
+
+    /* FEATURED POST */
+    .featured-wrap {
+      max-width: 860px;
+      margin: 0 auto 4rem;
+      padding: 0 5vw;
+    }
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      background: var(--pink-pale);
+      border-radius: 3px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--rule);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .featured-post:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 44px rgba(196,92,114,0.13);
+    }
+    .featured-body {
+      padding: 2.75rem 2.5rem 2.75rem 2.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 4px solid var(--pink-deep);
+    }
+    .featured-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pink-deep);
+      margin-bottom: 0.75rem;
+    }
+    .featured-post h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .featured-post .excerpt {
+      font-size: 0.95rem;
+      line-height: 1.72;
+      color: var(--ink-soft);
+      margin-bottom: 1.5rem;
+    }
+    .post-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .tag {
+      background: var(--pink-deep);
+      color: white;
+      padding: 0.2rem 0.65rem;
+      border-radius: 2px;
+      font-size: 0.67rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .post-date { font-size: 0.8rem; color: var(--ink-soft); }
+    .featured-visual {
+      background: linear-gradient(150deg, var(--pink) 0%, var(--pink-deep) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .featured-visual .glyph {
+      font-family: 'DM Serif Display', serif;
+      font-size: 6rem;
+      color: rgba(255,255,255,0.25);
+      line-height: 1;
+    }
+
+    /* POST GRID */
+    .posts-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 5vw 7rem;
+    }
+    .section-rule {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .section-rule span {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+    .section-rule::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2.5rem 2rem;
+    }
+
+    /* POST CARD */
+    .post-card {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease;
+    }
+    .post-card:hover { transform: translateY(-4px); }
+    .card-thumb {
+      aspect-ratio: 16/9;
+      border-radius: 2px;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem;
+      color: rgba(255,255,255,0.3);
+    }
+    .card-thumb.pink { background: linear-gradient(135deg, #f5c8d0, #e08898); }
+    .card-thumb.blue { background: linear-gradient(135deg, #c8d8f0, #9ab0d8); }
+    .card-thumb.sand { background: linear-gradient(135deg, #e8d8c4, #d0c0a4); }
+    .card-thumb.sage { background: linear-gradient(135deg, #c8dcc8, #a4c0a4); }
+
+    .card-category {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pink-deep);
+      margin-bottom: 0.45rem;
+    }
+    .post-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      line-height: 1.28;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .card-excerpt {
+      font-size: 0.88rem;
+      line-height: 1.68;
+      color: var(--ink-soft);
+      flex-grow: 1;
+      margin-bottom: 0.9rem;
+    }
+    .card-date { font-size: 0.76rem; color: #9A8890; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    footer p { font-size: 0.8rem; color: var(--ink-soft); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    footer a { font-size: 0.8rem; color: var(--pink-deep); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* FADE IN */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 680px) {
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-visual { display: none; }
+      .nav-links { gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="https://blagica.com">Blagica</a>
+  <ul class="nav-links">
+    <li><a href="https://blagica.com">Home</a></li>
+    <li><a href="https://blagica.com/#work">Work</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="https://zlato.co" target="_blank" rel="noopener">Zlato ↗</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header fade-up">
+  <p class="eyebrow">Writing</p>
+  <h1>Notes from<br /><em>the build.</em></h1>
+  <p class="deck">Vibe coding, growth marketing, Gen X life, and what it looks like to keep building things at 50.</p>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     FEATURED POST
+     Update: href, h2, excerpt, tag text, date
+     ═══════════════════════════════════════════════════════ -->
+<section class="featured-wrap fade-up">
+  <a class="featured-post" href="/blog/vibe-coding-at-50.html">
+    <div class="featured-body">
+      <p class="featured-label">✦ Featured Post</p>
+      <h2>What Vibe Coding Taught Me About Being Almost 50</h2>
+      <p class="excerpt">I'm not a developer. I've never claimed to be. But somewhere between prompting an AI to build me a dashboard and watching actual working code appear on my screen, something shifted.</p>
+      <div class="post-meta">
+        <span class="tag">Vibe Coding</span>
+        <span class="post-date">March 2026</span>
+      </div>
+    </div>
+    <div class="featured-visual">
+      <span class="glyph">✦</span>
+    </div>
+  </a>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     POST GRID
+     Copy a POST CARD block to add new posts.
+     Newest post goes at the TOP of the grid.
+     Thumb color options: pink / blue / sand / sage
+     ═══════════════════════════════════════════════════════ -->
+<section class="posts-wrap">
+  <div class="section-rule fade-up"><span>All Posts</span></div>
+
+  <div class="post-grid">
+
+    <!-- POST CARD -->
+    <a class="post-card fade-up" href="/blog/vibe-coding-at-50.html">
+      <div class="card-thumb pink">✦</div>
+      <p class="card-category">Vibe Coding</p>
+      <h3>What Vibe Coding Taught Me About Being Almost 50</h3>
+      <p class="card-excerpt">I'm not a developer. But watching code appear from a prompt did something to my brain — and my confidence.</p>
+      <span class="card-date">March 2026</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Blagica Bottigliero</p>
+  <div class="footer-links">
+    <a href="https://blagica.com">blagica.com</a>
+    <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co</a>
+    <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium ↗</a>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 90);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
+
