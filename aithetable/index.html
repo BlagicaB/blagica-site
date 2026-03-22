@@ -1,1 +1,806 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Table — AI & Automation for Gen X Women</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink:        #C4175F;
+    --pink-mid:    #E8206E;
+    --pink-soft:   #F7C5DC;
+    --blush:       #FDF0F5;
+    --blush-dark:  #F7E1EC;
+    --blush-card:  #FEF6F9;
+    --near-black:  #1A1018;
+    --dark-text:   #2D2230;
+    --mid-text:    #6B5E68;
+    --light-text:  #9A8E97;
+    --white:       #FFFFFF;
+    --border:      rgba(196,23,95,0.15);
+    --border-soft: rgba(196,23,95,0.08);
+    --serif:       'Playfair Display', Georgia, serif;
+    --sans:        'DM Sans', sans-serif;
+    --radius:      16px;
+    --radius-sm:   10px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--blush);
+    color: var(--dark-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(253,240,245,0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 0 2.5rem;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 1rem; color: var(--dark-text);
+    text-decoration: none; letter-spacing: -0.01em;
+  }
+  .nav-logo-icon { font-size: 1.3rem; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a {
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.04em; color: var(--mid-text);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--pink); }
+  .btn-nav {
+    background: var(--pink); color: var(--white) !important;
+    padding: 0.55rem 1.25rem; border-radius: 999px;
+    font-weight: 600 !important; font-size: 0.8rem !important;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-nav:hover { background: var(--pink-mid) !important; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center;
+    padding: 5rem 2rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
+    width: 80vw; height: 80vw; max-width: 700px; max-height: 700px;
+    background: radial-gradient(circle, rgba(196,23,95,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--near-black); color: var(--white);
+    font-size: 0.82rem; font-weight: 500;
+    padding: 0.6rem 1.25rem; border-radius: 999px;
+    margin-bottom: 2.5rem;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 900; line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--near-black);
+    margin-bottom: 1.75rem;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  .hero-title .pink { color: var(--pink); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    font-weight: 300; color: var(--mid-text);
+    max-width: 640px; margin: 0 auto 2.5rem;
+    line-height: 1.75;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1rem; justify-content: center;
+    flex-wrap: wrap; margin-bottom: 4rem;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--pink); color: var(--white);
+    font-size: 0.95rem; font-weight: 600;
+    padding: 0.9rem 2rem; border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(196,23,95,0.3);
+  }
+  .btn-primary:hover {
+    background: var(--pink-mid);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(196,23,95,0.35);
+  }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: var(--dark-text);
+    font-size: 0.95rem; font-weight: 500;
+    padding: 0.9rem 2rem; border-radius: 999px;
+    text-decoration: none; border: 1.5px solid var(--border);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--pink); background: var(--blush-card); }
+
+  /* ── STAT STRIP ── */
+  .stat-strip {
+    display: flex; justify-content: center; gap: 0;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--white);
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+  .stat-item {
+    flex: 1; max-width: 280px;
+    padding: 1.75rem 2rem; text-align: center;
+    border-right: 1px solid var(--border-soft);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: var(--serif); font-size: 2.2rem;
+    font-weight: 900; color: var(--pink);
+    line-height: 1; display: block; margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--light-text);
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 5.5rem 2rem; }
+  .container { max-width: 1060px; margin: 0 auto; }
+
+  .pill-tag {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--blush-dark); color: var(--pink);
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 0.45rem 1rem; border-radius: 999px;
+    margin-bottom: 1.25rem;
+  }
+  .section-title {
+    font-family: var(--serif); font-weight: 900;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    color: var(--near-black); line-height: 1.1;
+    margin-bottom: 1rem; letter-spacing: -0.02em;
+  }
+  .section-title .pink { color: var(--pink); }
+  .section-title em { font-style: italic; color: var(--pink); }
+  .section-body {
+    font-size: 1rem; font-weight: 300;
+    color: var(--mid-text); line-height: 1.85; max-width: 58ch;
+  }
+
+  /* ── WHO WE ARE ── */
+  .who-section { background: var(--white); }
+  .who-header { text-align: center; margin-bottom: 3.5rem; }
+  .who-header .section-body { margin: 0 auto; }
+  .who-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+  }
+  .who-card {
+    background: var(--blush-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius); padding: 2rem;
+    transition: border-color 0.25s, transform 0.2s, box-shadow 0.2s;
+  }
+  .who-card:hover {
+    border-color: var(--pink-soft);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(196,23,95,0.08);
+  }
+  .who-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .who-card h3 {
+    font-family: var(--serif); font-size: 1.2rem;
+    font-weight: 700; color: var(--near-black);
+    margin-bottom: 0.6rem;
+  }
+  .who-card p {
+    font-size: 0.9rem; font-weight: 300;
+    color: var(--mid-text); line-height: 1.75;
+  }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside-section { background: var(--blush); }
+  .inside-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius); overflow: hidden;
+    margin-top: 3rem;
+  }
+  .inside-card {
+    background: var(--white); padding: 2.25rem 2rem;
+    transition: background 0.2s;
+  }
+  .inside-card:hover { background: var(--blush-card); }
+  .inside-num {
+    font-family: var(--serif); font-size: 2.5rem; font-weight: 900;
+    color: var(--border); line-height: 1; margin-bottom: 0.75rem;
+    transition: color 0.25s;
+  }
+  .inside-card:hover .inside-num { color: var(--pink-soft); }
+  .inside-card.featured { background: var(--blush-card); border: 2px solid var(--pink-soft); }
+  .inside-card.featured .inside-num { color: var(--pink-soft); }
+  .inside-card h3 {
+    font-family: var(--serif); font-size: 1.15rem;
+    font-weight: 700; color: var(--near-black); margin-bottom: 0.5rem;
+  }
+  .inside-card p {
+    font-size: 0.87rem; font-weight: 300;
+    color: var(--mid-text); line-height: 1.75;
+  }
+
+  /* ── LIVE SESSIONS ── */
+  .lives-section { background: var(--white); }
+  .lives-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+  }
+  .lives-header .section-body { margin-bottom: 2rem; }
+  .lives-big {
+    font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 900; color: var(--near-black); line-height: 1.1;
+    letter-spacing: -0.02em; margin-bottom: 0.75rem;
+  }
+  .lives-big .pink { color: var(--pink); }
+  .sessions-list { display: flex; flex-direction: column; gap: 1rem; }
+  .session-item {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    background: var(--blush-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm); padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .session-item:hover { border-color: var(--pink-soft); }
+  .session-icon { font-size: 1.75rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .session-cadence {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--pink); margin-bottom: 0.2rem;
+  }
+  .session-item h4 {
+    font-family: var(--serif); font-size: 1.05rem;
+    font-weight: 700; color: var(--near-black); margin-bottom: 0.25rem;
+  }
+  .session-item p {
+    font-size: 0.85rem; font-weight: 300;
+    color: var(--mid-text); line-height: 1.65;
+  }
+  .lives-quote-block {
+    background: var(--blush);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius); padding: 2.5rem;
+    position: relative;
+  }
+  .lives-quote-block::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: linear-gradient(90deg, var(--pink), var(--pink-soft));
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .lives-quote-block blockquote {
+    font-family: var(--serif); font-size: 1.4rem;
+    font-style: italic; color: var(--near-black);
+    line-height: 1.55; margin-bottom: 1.25rem;
+  }
+  .lives-quote-block cite {
+    font-size: 0.75rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--pink); font-style: normal;
+  }
+
+  /* ── EBOOK ── */
+  .ebook-section { background: var(--blush); }
+  .ebook-inner {
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    gap: 5rem; align-items: center;
+  }
+  .ebook-cover {
+    background: linear-gradient(145deg, var(--near-black) 0%, #2d1a28 100%);
+    border-radius: var(--radius); padding: 3rem 2.5rem;
+    aspect-ratio: 3/4; max-width: 320px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(196,23,95,0.2);
+  }
+  .ebook-cover::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px; background: linear-gradient(90deg, var(--pink), var(--pink-soft));
+  }
+  .ebook-bg-text {
+    position: absolute; bottom: -5%; right: -5%;
+    font-family: var(--serif); font-size: 16rem;
+    color: rgba(255,255,255,0.03); line-height: 1;
+    pointer-events: none; user-select: none; font-weight: 900;
+  }
+  .ebook-cover-eyebrow {
+    font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--pink-soft); margin-bottom: 0.75rem; position: relative; z-index: 1;
+  }
+  .ebook-cover-title {
+    font-family: var(--serif); font-size: 1.6rem; font-weight: 900;
+    color: var(--white); line-height: 1.2; margin-bottom: 0.5rem;
+    position: relative; z-index: 1;
+  }
+  .ebook-cover-sub {
+    font-size: 0.78rem; font-style: italic;
+    color: rgba(255,255,255,0.55); line-height: 1.5;
+    position: relative; z-index: 1; margin-bottom: 0.75rem;
+  }
+  .ebook-cover-author {
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--pink-soft); position: relative; z-index: 1;
+  }
+  .chapter-list { display: flex; flex-direction: column; gap: 0.55rem; margin: 1.75rem 0 2rem; }
+  .chapter-row {
+    display: flex; gap: 0.85rem; align-items: flex-start;
+    font-size: 0.87rem; color: var(--mid-text); font-weight: 300; line-height: 1.5;
+  }
+  .ch-num {
+    font-family: var(--serif); font-size: 0.72rem; font-weight: 700;
+    color: var(--pink); min-width: 22px; margin-top: 0.05rem;
+  }
+  .bonus-row {
+    display: flex; gap: 0.85rem; align-items: flex-start;
+    font-size: 0.87rem; color: var(--mid-text); font-weight: 300;
+    background: var(--blush-dark); border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem; margin-top: 0.5rem;
+  }
+  .bonus-row strong { color: var(--near-black); font-weight: 600; }
+
+  /* ── WHO IT'S FOR ── */
+  .for-section { background: var(--white); }
+  .for-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin-top: 3rem;
+  }
+  .for-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.25rem 1.5rem;
+    background: var(--blush-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .for-item:hover { border-color: var(--pink-soft); }
+  .for-check { color: var(--pink); font-size: 1rem; flex-shrink: 0; margin-top: 0.2rem; }
+  .for-item p { font-size: 0.9rem; font-weight: 300; color: var(--mid-text); line-height: 1.65; }
+  .for-item strong { color: var(--near-black); font-weight: 600; }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--blush); }
+  .about-inner { display: grid; grid-template-columns: 300px 1fr; gap: 5rem; align-items: start; }
+  .about-photo {
+    background: var(--blush-dark);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius); aspect-ratio: 3/4;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .about-photo::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--pink);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .about-photo-label {
+    font-size: 0.68rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--light-text);
+  }
+  .about-body p {
+    font-size: 0.97rem; font-weight: 300;
+    color: var(--mid-text); line-height: 1.9; margin-bottom: 1rem;
+  }
+  .cred-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
+  .pill {
+    font-size: 0.67rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--pink);
+    background: var(--blush-card);
+    border: 1px solid var(--border); padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+  }
+
+  /* ── FINAL CTA ── */
+  .cta-section {
+    background: var(--near-black); padding: 6rem 2rem;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; top: -60%; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(196,23,95,0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .cta-section h2 {
+    font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900; color: var(--white); line-height: 1.1;
+    margin-bottom: 1.25rem; letter-spacing: -0.02em;
+    position: relative;
+  }
+  .cta-section h2 .pink { color: var(--pink-soft); }
+  .cta-section p {
+    font-size: 1rem; font-weight: 300;
+    color: rgba(255,255,255,0.6); max-width: 48ch;
+    margin: 0 auto 2.5rem; line-height: 1.8; position: relative;
+  }
+  .btn-cta-white {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--white); color: var(--pink);
+    font-size: 0.95rem; font-weight: 700;
+    padding: 1rem 2.5rem; border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    position: relative;
+  }
+  .btn-cta-white:hover { background: var(--blush); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--near-black); padding: 2rem 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-left {
+    display: flex; flex-direction: column; gap: 0.25rem;
+  }
+  .footer-brand {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 0.95rem; color: var(--white);
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .footer-sub {
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+  .footer-links { display: flex; gap: 1.5rem; align-items: center; }
+  .footer-links a {
+    font-size: 0.75rem; color: rgba(255,255,255,0.4);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--pink-soft); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links li:not(:last-child) { display: none; }
+    section { padding: 4rem 1.25rem; }
+    .who-cards, .inside-grid, .for-grid { grid-template-columns: 1fr; }
+    .inside-grid { border-radius: 0; }
+    .lives-inner, .ebook-inner, .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .ebook-cover { max-width: 100%; aspect-ratio: auto; padding: 2rem; }
+    .stat-strip { flex-wrap: wrap; }
+    .stat-item { min-width: 45%; border-bottom: 1px solid var(--border-soft); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-icon">🪑</span>
+    The AI Table
+  </a>
+  <ul class="nav-links">
+    <li><a href="#who">Who We Are</a></li>
+    <li><a href="#inside">What's Inside</a></li>
+    <li><a href="#lives">Live Sessions</a></li>
+    <li><a href="#ebook">The Ebook</a></li>
+    <li><a href="#join" class="btn-nav">Pull Up a Chair</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    👩‍💻 We didn't wait for a seat — we built the whole table
+  </div>
+  <h1 class="hero-title">
+    The AI<br><span class="pink">Table</span>
+  </h1>
+  <p class="hero-sub">
+    We spent decades earning our seat at the table. Now we're building a new one — where Gen X women learn AI &amp; automation together. No gatekeeping. No jargon. Just women who've always figured it out, figuring out what's next. 💪
+  </p>
+  <div class="hero-actions">
+    <a href="#join" class="btn-primary">🪑 Pull Up a Chair</a>
+    <a href="#who" class="btn-secondary">Learn More</a>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-item">
+    <span class="stat-num">47M</span>
+    <span class="stat-label">Gen X Women Ready for This</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">2x</span>
+    <span class="stat-label">Monthly Office Hours</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">100%</span>
+    <span class="stat-label">"Well, Actually"-Free</span>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<section id="who" class="who-section">
+  <div class="container">
+    <div class="who-header fade-up">
+      <div class="pill-tag">✨ Who We Are</div>
+      <h2 class="section-title">Every seat at this table<br>was <span class="pink">earned.</span></h2>
+      <p class="section-body">We've navigated career pivots, raised humans, survived dial-up internet, and figured out every new technology thrown at us. AI is just the next thing we're going to master — together. 🦸‍♀️</p>
+    </div>
+    <div class="who-cards fade-up">
+      <div class="who-card">
+        <span class="who-icon">🧠</span>
+        <h3>AI Without the Intimidation</h3>
+        <p>We've been told to "lean in" long enough. Here, we just dive in. ChatGPT, Claude, Midjourney, automation platforms — ask anything. The only wrong question is the one you don't ask. (Seriously. We've all been there.)</p>
+      </div>
+      <div class="who-card">
+        <span class="who-icon">🍷</span>
+        <h3>A Table Where You Belong</h3>
+        <p>No mansplaining. No "well, actually." We've sat through enough of those meetings. This table is ours — built on respect, encouragement, and celebrating every win. Think book club energy, but for AI. 😊</p>
+      </div>
+      <div class="who-card">
+        <span class="who-icon">🔥</span>
+        <h3>Practical, Not Theoretical</h3>
+        <p>We didn't get this far by reading about it — we did it. Real automations, real workflows, real results. From Zapier to Python scripts, we share what actually moves the needle. No fluff, just stuff that works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section id="inside" class="inside-section">
+  <div class="container">
+    <div class="fade-up">
+      <div class="pill-tag">🪑 What's Inside</div>
+      <h2 class="section-title">Everything you need.<br><em>Nothing you don't.</em></h2>
+    </div>
+    <div class="inside-grid fade-up">
+      <div class="inside-card featured">
+        <div class="inside-num">01</div>
+        <h3>The Ebook — $27</h3>
+        <p><em>AI For The Rest Of Us</em> — 8 chapters + 200 copy-paste prompts. Practical, no-BS, written for you. Instant download. No community required.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">02</div>
+        <h3>The Community — Stan</h3>
+        <p>Join separately on Stan. Private member space where women share wins, ask questions, and hold each other accountable. Separate from the ebook.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">03</div>
+        <h3>Private Community</h3>
+        <p>A members-only space where women share wins, ask questions, and hold each other accountable. No posturing. No gatekeeping. Real conversations.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">04</div>
+        <h3>Tool Breakdowns</h3>
+        <p>Honest, plain-English reviews of the tools worth your time — with specific use cases for your actual work and life, not generic tech-bro examples.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">05</div>
+        <h3>Prompts & Workflows</h3>
+        <p>200 steal-ready prompts covering email, reports, data, content, side hustles, health, and more. Copy them. Tweak them. Use them today.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">06</div>
+        <h3>Direct Access to Blagica</h3>
+        <p>25+ years in digital. Emmy Award winner. Built $1M in 10 months bootstrapped. She's in the community every week — ask her anything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE SESSIONS -->
+<section id="lives" class="lives-section">
+  <div class="container">
+    <div class="lives-inner">
+      <div class="lives-header fade-up">
+        <div class="pill-tag">☕ Live Sessions</div>
+        <div class="lives-big">Bi-Monthly <span class="pink">Office Hours</span></div>
+        <p class="section-body" style="margin-bottom:2rem;">Twice a month, we gather around the table on Zoom. Bring your questions, share your screen, get real-time help. Every voice gets heard here. (BYO coffee or wine — we don't judge.) 🍷</p>
+        <div class="sessions-list">
+          <div class="session-item">
+            <span class="session-icon">📺</span>
+            <div>
+              <div class="session-cadence">Biweekly</div>
+              <h4>Tool Spotlight Sessions</h4>
+              <p>One tool, deep dive. What it does, who it's for, live demo, live Q&amp;A. Walk away with something you can use immediately.</p>
+            </div>
+          </div>
+          <div class="session-item">
+            <span class="session-icon">🙋‍♀️</span>
+            <div>
+              <div class="session-cadence">Monthly</div>
+              <h4>Open Office Hours</h4>
+              <p>No agenda. Just bring your real questions — your current AI struggles, your wins, your "is this normal?" moments. Honest answers only.</p>
+            </div>
+          </div>
+          <div class="session-item">
+            <span class="session-icon">⚡</span>
+            <div>
+              <div class="session-cadence">As needed</div>
+              <h4>Breaking News Calls</h4>
+              <p>When something big drops in AI, we get on a call fast. You shouldn't be getting your news from a 22-year-old's TikTok.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lives-quote-block fade-up">
+        <blockquote>"I don't need another YouTube tutorial. I need someone to tell me what actually matters for my business — live, right now — and let me ask questions without judgment."</blockquote>
+        <cite>— The woman this was built for</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EBOOK -->
+<section id="ebook" class="ebook-section">
+  <div class="container">
+    <div class="ebook-inner">
+      <div class="ebook-cover fade-up">
+        <div class="ebook-bg-text">AI</div>
+        <div class="ebook-cover-eyebrow">Zlato Labs · Blagica Bottigliero</div>
+        <div class="ebook-cover-title">AI For The Rest Of Us</div>
+        <div class="ebook-cover-sub">Beyond "What's for Dinner?"<br>to "I Built That."</div>
+        <div class="ebook-cover-author">Emmy Award-Winning Digital Strategist</div>
+      </div>
+      <div class="fade-up">
+        <div class="pill-tag">📖 The Ebook</div>
+        <h2 class="section-title">A no-BS guide to <em>actually</em> using AI.</h2>
+        <p class="section-body" style="margin-bottom:0.5rem;">Eight chapters. 200 copy-paste prompts. Written by someone who's been in digital since before most AI founders were in high school — and refuses to dumb it down or make it harder than it needs to be.</p>
+        <div class="chapter-list">
+          <div class="chapter-row"><span class="ch-num">01</span><span>Let's Talk About AI (For Real This Time) — the basics without the jargon</span></div>
+          <div class="chapter-row"><span class="ch-num">02</span><span>AI at Work — Corporate America, Meet Your New Ally</span></div>
+          <div class="chapter-row"><span class="ch-num">03</span><span>AI as Your Life Co-Pilot — Calendar, planning, daily life management</span></div>
+          <div class="chapter-row"><span class="ch-num">04</span><span>Build Your Own Website — Yes, You. With Claude Code.</span></div>
+          <div class="chapter-row"><span class="ch-num">05</span><span>Web Hosting 101 — Getting your site live without a CS degree</span></div>
+          <div class="chapter-row"><span class="ch-num">06</span><span>SEO, GEO & Getting Found — Show up in search, own your audience</span></div>
+          <div class="chapter-row"><span class="ch-num">07</span><span>Vibe Coding — The Apps That Build Apps</span></div>
+          <div class="chapter-row"><span class="ch-num">08</span><span>Connectors — The Real Time Saver (Gmail, Calendar, Slack, Notion)</span></div>
+          <div class="bonus-row"><span class="ch-num">★</span><span><strong>BONUS: 200 AI Prompts</strong> — Your copy-paste playbook for work, life, and building</span></div>
+        </div>
+        <a href="#join" class="btn-primary" style="margin-top:0.5rem;">Get the Ebook — $27</a>
+        <p style="margin-top:0.85rem;font-size:0.78rem;color:var(--light-text);">Instant download. Join the community separately on Stan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="for" class="for-section">
+  <div class="container">
+    <div class="fade-up">
+      <div class="pill-tag">✦ Who This Is For</div>
+      <h2 class="section-title">You're in the right place if...</h2>
+    </div>
+    <div class="for-grid fade-up">
+      <div class="for-item">
+        <span class="for-check">✦</span>
+        <p>You're a <strong>Gen X woman or midlifer</strong> who's watched AI take over every conversation — and you want in before it changes your industry without you.</p>
+      </div>
+      <div class="for-item">
+        <span class="for-check">✦</span>
+        <p>You run a <strong>business, freelance practice, or side hustle</strong> and know you're leaving time and money on the table by not using the right tools.</p>
+      </div>
+      <div class="for-item">
+        <span class="for-check">✦</span>
+        <p>You're <strong>tired of tutorials</strong> that assume you want to build a startup or learn to code — you want to use AI as an operator, not a developer.</p>
+      </div>
+      <div class="for-item">
+        <span class="for-check">✦</span>
+        <p>You want to learn <strong>in community</strong> — with women who ask the same questions, share what's actually working, and don't make you feel behind.</p>
+      </div>
+      <div class="for-item">
+        <span class="for-check">✦</span>
+        <p>You want <strong>live access</strong> to someone doing this in real-time — not a course recorded two years ago by someone who read a book about AI.</p>
+      </div>
+      <div class="for-item">
+        <span class="for-check">✦</span>
+        <p>You believe that <strong>Gen X women</strong> who've figured out everything else can absolutely figure this out too — and you're ready to prove it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-photo fade-up">
+        <img src="blagicalaptop.jpg" alt="Blagica Bottigliero"
+          style="width:100%;height:100%;object-fit:cover;border-radius:16px;display:block;">
+      </div>
+      <div class="fade-up">
+        <div class="pill-tag">👋 Your Host</div>
+        <h2 class="section-title">Blagica Bottigliero</h2>
+        <div class="about-body">
+          <p>I'm a Gen X founder, growth marketer, and builder. I've been in digital since before Google was a verb — Edelman Digital, Motorola Mobility, Orbitz, and an Emmy for New Media work.</p>
+          <p>I co-founded Bottles Nation, one of the first virtual wine tasting platforms in the US. Zero to $1M in 10 months, bootstrapped, during a pandemic, with a team of two. No VC. No boys' club network.</p>
+          <p>Today I run Zlato, a fractional growth consultancy and studio — and I spend a lot of time building things with AI because I believe the women who learn to use this right, right now, are going to have an enormous advantage.</p>
+          <p>The AI Table is where I share everything I'm learning, in plain language, with women who are ready to use it. We're Gen X. We figured out the internet when nobody gave us a manual. We can figure out AI too.</p>
+        </div>
+        <div class="cred-pills">
+          <span class="pill">Emmy Award</span>
+          <span class="pill">Edelman Digital</span>
+          <span class="pill">Motorola Mobility</span>
+          <span class="pill">Orbitz</span>
+          <span class="pill">Bottles Nation</span>
+          <span class="pill">25+ Yrs Digital</span>
+          <span class="pill">Zlato Labs</span>
+          <span class="pill">Detroit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="join" class="cta-section">
+  <h2>We're Gen X. We figured out<br>the internet. <span class="pink">We've got this.</span></h2>
+  <p>Get the ebook. Join the community. Show up to the lives. The tools are here, they're accessible, and they're not waiting for you to feel "ready." Neither are we.</p>
+  <a href="#" class="btn-cta-white">🪑 Pull Up a Chair — $27</a>
+  <p style="margin-top:1rem;font-size:0.78rem;color:rgba(255,255,255,0.35);">Ebook $27 · Community membership available separately on Stan.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-brand">🪑 The AI Table</div>
+    <div class="footer-sub">A Zlato Labs Project · by Blagica Bottigliero</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://zlato.co" target="_blank">Zlato.co</a>
+    <a href="https://blagica.com" target="_blank">Blagica.com</a>
+    <a href="#" target="_blank">Stan Community</a>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+  });
+</script>
+</body>
+</html>
+
