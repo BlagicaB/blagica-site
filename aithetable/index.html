@@ -236,6 +236,28 @@
     font-size: 0.87rem; font-weight: 300;
     color: var(--mid-text); line-height: 1.75;
   }
+  /* ── INSIDE QUOTE CARD ── */
+  .inside-quote-card {
+    display: flex; flex-direction: column; justify-content: center;
+    background: var(--blush-card); border-left: 3px solid var(--pink-soft);
+  }
+  .inside-quote-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .inside-quote {
+    font-family: var(--serif); font-size: 1.05rem;
+    font-style: italic; color: var(--near-black);
+    line-height: 1.55; margin-bottom: 1rem;
+  }
+  .inside-cite {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--pink); font-style: normal; line-height: 1.6;
+  }
+  .inside-cite span {
+    display: block; margin-top: 0.3rem;
+    font-weight: 300; text-transform: none;
+    letter-spacing: 0; color: var(--mid-text);
+    font-size: 0.78rem;
+  }
   /* ── COMING SOON BADGE ── */
   .coming-soon-badge {
     display: inline-block;
@@ -586,7 +608,7 @@
       </div>
       <div class="inside-card">
         <div class="inside-num">02</div>
-        <h3>The Community — Stan</h3>
+        <h3>The Table Talk Community</h3>
         <p>A members-only space where women share wins, ask questions, and hold each other accountable. No posturing. No gatekeeping. Real conversations.</p>
         <span class="coming-soon-badge">🚧 Coming Soon</span>
       </div>
@@ -604,6 +626,11 @@
         <div class="inside-num">05</div>
         <h3>Direct Access to Blagica</h3>
         <p>25+ years in digital. Emmy Award winner. Built $1M in 10 months bootstrapped. She's in the community every week — ask her anything.</p>
+      </div>
+      <div class="inside-card inside-quote-card">
+        <div class="inside-quote-icon">👑</div>
+        <blockquote class="inside-quote">"The Analytical Engine weaves algebraical patterns just as the Jacquard loom weaves flowers and leaves."</blockquote>
+        <cite class="inside-cite">— Ada Lovelace, 1843<br><span>The world's first computer programmer. She wrote the first algorithm before the machine even existed.</span></cite>
       </div>
     </div>
   </div>
