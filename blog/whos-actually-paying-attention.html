@@ -298,10 +298,16 @@
 </footer>
 
 <script>
+  // Fade-in observer with low threshold and rootMargin for early triggering
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.01, rootMargin: '0px 0px 200px 0px' });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  // Immediately reveal any elements already in viewport
+  document.querySelectorAll('.fade-up').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) el.classList.add('visible');
+  });
 </script>
 
 </body>
