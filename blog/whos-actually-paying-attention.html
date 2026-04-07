@@ -24,12 +24,14 @@
   <meta property="article:tag" content="Financial Literacy">
   <meta property="article:tag" content="Higher Education">
   <meta property="article:tag" content="Creator Economy">
+  <meta property="og:image" content="https://blagica.com/Pay_attention.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Who's Actually Paying Attention? The Growing Gap Between Those Who Adapt and Those Who Don't">
   <meta name="twitter:description" content="AI is reshaping the economy. College majors are disappearing. The creator economy is a myth for most. And the people who benefit most from your inattention are billionaires.">
   <meta name="twitter:site" content="@baborules">
+  <meta name="twitter:image" content="https://blagica.com/Pay_attention.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -136,14 +138,15 @@
 
     /* HERO VISUAL */
     .hero-visual {
-      background: linear-gradient(135deg, var(--pink-pale) 0%, var(--pink) 100%);
       border-radius: 3px;
-      height: 300px;
       margin-bottom: 3rem;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'DM Serif Display', serif;
-      font-size: 5rem;
-      color: rgba(255,255,255,0.2);
+      overflow: hidden;
+    }
+    .hero-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 3px;
     }
 
     /* ARTICLE BODY */
@@ -290,7 +293,9 @@
   </header>
 
   <!-- HERO -->
-  <div class="hero-visual">✦</div>
+  <div class="hero-visual">
+    <img src="/Pay_attention.png" alt="Who's Actually Paying Attention? The Growing Gap Between Those Who Adapt and Those Who Don't">
+  </div>
 
   <!-- ARTICLE BODY -->
   <article class="article-body">
