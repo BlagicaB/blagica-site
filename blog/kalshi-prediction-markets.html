@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Downloaded Kalshi to See What the Hype Was About — Blagica Bottigliero</title>
+  <meta name="description" content="Prediction markets processed $25.7B in a single month. Kalshi is valued at $22B. Gen Z is piling in. Here's what Kalshi and Polymarket actually are, which states have banned them, and why it matters.">
+  <meta name="author" content="Blagica Bottigliero">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blagica.com/blog/kalshi-prediction-markets.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="I Downloaded Kalshi to See What the Hype Was About — and Why You Should Be Paying Attention">
+  <meta property="og:description" content="Prediction markets processed $25.7B in a single month. The platforms are targeting your kids. The Fed is using the data. Most people have never heard of them.">
+  <meta property="og:url" content="https://blagica.com/blog/kalshi-prediction-markets.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Blagica Bottigliero">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="Blagica Bottigliero">
+  <meta property="article:published_time" content="2026-04-09">
+  <meta property="article:section" content="Economy">
+  <meta property="article:tag" content="Prediction Markets">
+  <meta property="article:tag" content="Kalshi">
+  <meta property="article:tag" content="Polymarket">
+  <meta property="article:tag" content="Gen Z">
+  <meta property="article:tag" content="Regulation">
+  <meta property="og:image" content="https://blagica.com/PredictiveMarkets.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="I Downloaded Kalshi to See What the Hype Was About">
+  <meta name="twitter:description" content="A $44B industry growing faster than anything I've seen in 25 years of watching the internet.">
+  <meta name="twitter:site" content="@baborules">
+  <meta name="twitter:image" content="https://blagica.com/PredictiveMarkets.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #E8A0A8;
+      --pink-deep:  #C45C72;
+      --pink-pale:  #FDF0F2;
+      --ink:        #1A1118;
+      --ink-soft:   #5A4A52;
+      --rule:       #EAD8DC;
+      --white:      #FFFFFF;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5vw; border-bottom: 1px solid var(--rule); position: sticky; top: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); z-index: 100; }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink-deep); }
+
+    .article-wrap { max-width: 680px; margin: 0 auto; padding: 0 5vw; }
+    .article-header { padding: 4rem 0 3rem; border-bottom: 1px solid var(--rule); margin-bottom: 3rem; }
+    .article-category { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pink-deep); margin-bottom: 1rem; }
+    .article-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem, 4.5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+    .article-header h1 em { font-style: italic; color: var(--pink-deep); }
+    .article-deck { font-size: 1.15rem; line-height: 1.7; color: var(--ink-soft); margin-bottom: 2rem; font-style: italic; }
+    .article-meta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    .author-line { display: flex; align-items: center; gap: 0.6rem; }
+    .author-dot { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--pink), var(--pink-deep)); display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 0.85rem; color: white; }
+    .author-name { font-size: 0.88rem; font-weight: 500; }
+    .meta-sep { color: var(--rule); }
+    .article-date, .article-read { font-size: 0.82rem; color: var(--ink-soft); }
+
+    .hero-visual { border-radius: 3px; margin-bottom: 3rem; overflow: hidden; }
+    .hero-visual img { width: 100%; height: auto; display: block; border-radius: 3px; }
+
+    .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink); margin-bottom: 4rem; }
+    .article-body p { margin-bottom: 1.6rem; }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: 1.65rem; line-height: 1.2; letter-spacing: -0.015em; margin: 2.75rem 0 1rem; }
+    .article-body h3 { font-family: 'DM Serif Display', serif; font-size: 1.25rem; line-height: 1.3; margin: 2rem 0 0.75rem; color: var(--ink); }
+    .article-body blockquote { border-left: 3px solid var(--pink-deep); margin: 2.5rem 0; padding: 1.25rem 1.75rem; background: var(--pink-pale); border-radius: 0 3px 3px 0; }
+    .article-body blockquote p { font-family: 'DM Serif Display', serif; font-size: 1.25rem; line-height: 1.5; font-style: italic; color: var(--ink); margin: 0; }
+    .article-body a { color: var(--pink-deep); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { text-decoration: none; }
+    .article-body strong { font-weight: 500; }
+    .article-body em { font-style: italic; }
+    hr.section-break { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .stat-row { display: flex; gap: 1.25rem; margin: 2.5rem 0; flex-wrap: wrap; }
+    .stat-card { flex: 1; min-width: 180px; background: var(--pink-pale); border: 1px solid var(--rule); border-radius: 3px; padding: 1.5rem; text-align: center; }
+    .stat-number { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--pink-deep); line-height: 1; margin-bottom: 0.5rem; }
+    .stat-label { font-size: 0.78rem; line-height: 1.5; color: var(--ink-soft); }
+
+    .callout { background: var(--pink-pale); border: 1px solid var(--rule); border-left: 3px solid var(--pink-deep); border-radius: 3px; padding: 1.5rem 1.75rem; margin: 2.5rem 0; }
+    .callout h4 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--pink-deep); }
+    .callout p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.75rem; }
+    .callout p:last-child { margin-bottom: 0; }
+
+    .article-footer { margin-bottom: 4rem; }
+    .tags-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; background: var(--pink-pale); color: var(--pink-deep); padding: 0.35rem 0.75rem; border-radius: 2px; }
+    .author-card { background: var(--pink-pale); border: 1px solid var(--rule); border-radius: 3px; padding: 2rem; display: flex; gap: 1.5rem; align-items: flex-start; }
+    .author-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--pink), var(--pink-deep)); display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: white; flex-shrink: 0; }
+    .author-info h4 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .author-info p { font-size: 0.88rem; line-height: 1.6; color: var(--ink-soft); margin-bottom: 0.75rem; }
+    .author-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .author-links a { font-size: 0.78rem; font-weight: 500; color: var(--pink-deep); text-decoration: none; letter-spacing: 0.04em; }
+    .author-links a:hover { text-decoration: underline; }
+
+    .back-row { padding: 0 0 4rem; text-align: center; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+    .back-link:hover { color: var(--pink-deep); }
+
+    footer { border-top: 1px solid var(--rule); padding: 2rem 5vw; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    footer p { font-size: 0.8rem; color: var(--ink-soft); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    footer a { font-size: 0.8rem; color: var(--pink-deep); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .author-card { flex-direction: column; gap: 1rem; }
+      .nav-links { gap: 1.25rem; }
+      .stat-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://blagica.com">Blagica</a>
+  <ul class="nav-links">
+    <li><a href="https://blagica.com">Home</a></li>
+    <li><a href="https://blagica.com/#work">Work</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="https://zlato.co" target="_blank" rel="noopener">Zlato ↗</a></li>
+  </ul>
+</nav>
+
+<main class="article-wrap">
+
+  <header class="article-header">
+    <p class="article-category">Economy · Prediction Markets · Gen Z · Regulation</p>
+    <h1>I Downloaded Kalshi to See What the Hype Was About. <em>Here's What I Found — and Why You Should Be Paying Attention.</em></h1>
+    <p class="article-deck">Prediction markets just processed $25 billion in a single month. The platforms are targeting your kids. The Federal Reserve is using the data. And most people have never heard of them.</p>
+    <div class="article-meta">
+      <div class="author-line">
+        <div class="author-dot">B</div>
+        <span class="author-name">Blagica Bottigliero</span>
+      </div>
+      <span class="meta-sep">·</span>
+      <span class="article-date">April 2026</span>
+      <span class="meta-sep">·</span>
+      <span class="article-read">10 min read</span>
+    </div>
+  </header>
+
+  <div class="hero-visual">
+    <img src="/PredictiveMarkets.png" alt="Students using prediction market apps like Kalshi and Polymarket on their phones at an outdoor table">
+  </div>
+
+  <article class="article-body">
+
+    <p>I downloaded <a href="https://kalshi.com" target="_blank" rel="noopener">Kalshi</a> last week. Not because I planned to bet on whether the Fed will cut rates or whether there will be more tech layoffs in 2026 than 2025 (the answer, according to Kalshi's traders, is yes at 83%). I downloaded it because I keep seeing it everywhere — on CNBC, on Fox News, in my LinkedIn feed — and I needed to understand what this thing actually <em>is</em> before I had an opinion about it.</p>
+
+    <p>Within ten minutes, I was looking at live contracts on inflation projections, who would host SNL, what the Rotten Tomatoes score will be of <em>The Devil Wears Prada 2</em>, and the over/under on Elon Musk's next IPO. Real money. Real odds. Updated in real time.</p>
+
+    <p>And my first thought wasn't "this is cool." It was: <strong>Who is making money off the fact that most Americans don't know this exists?</strong></p>
+
+    <h2>What Prediction Markets Actually Are</h2>
+
+    <p>A <a href="https://en.wikipedia.org/wiki/Prediction_market" target="_blank" rel="noopener">prediction market</a> is an exchange where you buy and sell contracts based on whether something will happen. Not stocks. Not crypto. Events. Will unemployment hit 5%? Will a specific cabinet member resign? Will it rain in Seattle on Tuesday?</p>
+
+    <p>You buy a "yes" or "no" contract, and the price reflects what the market collectively believes the probability is. If you're right, you get paid based on the odds. If you're wrong, you lose what you paid.</p>
+
+    <p>Kalshi is the first prediction market regulated by the <a href="https://www.cftc.gov/" target="_blank" rel="noopener">CFTC</a> — the same body that oversees commodity futures. It operates in U.S. dollars. You can fund it with a bank account. <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a>, its main rival, runs on blockchain rails using crypto (specifically USDC). Together, they dominate <a href="https://www.bloomberg.com/news/articles/2026-03-15/prediction-markets-kalshi-polymarket-volume" target="_blank" rel="noopener">roughly 85–90% of all prediction market volume globally</a>.</p>
+
+    <p>This is not a niche thing anymore.</p>
+
+    <h2>The Growth Is Staggering</h2>
+
+    <p>Here's where my marketer brain went into overdrive. The numbers on this industry's growth are unlike anything I've seen outside of early social media adoption.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-number">$44B</div>
+        <div class="stat-label">total prediction market trading volume in 2025, up from under $100M per month in early 2024</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">$25.7B</div>
+        <div class="stat-label">traded in March 2026 alone — nearly a 13x increase from March 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">$22B</div>
+        <div class="stat-label">Kalshi's valuation as of its latest round, up from $2B just nine months earlier</div>
+      </div>
+    </div>
+
+    <p>Kalshi crossed <a href="https://www.wsj.com/finance/kalshi-prediction-markets-revenue" target="_blank" rel="noopener">$1 billion in annualized revenue</a>. Polymarket received <a href="https://www.reuters.com/technology/intercontinental-exchange-polymarket-investment-2025" target="_blank" rel="noopener">a $2 billion investment from the Intercontinental Exchange</a> — the company that owns the <a href="https://www.nyse.com/" target="_blank" rel="noopener">New York Stock Exchange</a>. Yup.</p>
+
+    <p>The prediction markets on <a href="https://robinhood.com" target="_blank" rel="noopener">Robinhood</a> are reportedly the <a href="https://www.cnbc.com/2026/robinhood-kalshi-fastest-product.html" target="_blank" rel="noopener">fastest-scaling product in the company's history</a>. <a href="https://www.cnn.com" target="_blank" rel="noopener">CNN</a>, <a href="https://www.cnbc.com" target="_blank" rel="noopener">CNBC</a> and <a href="https://www.foxnews.com" target="_blank" rel="noopener">Fox News</a> all have data partnerships with these platforms now. Fox just announced this week it will integrate Kalshi data across <a href="https://www.foxnews.com/media/fox-news-kalshi-announce-multi-year-partnership-prediction-markets" target="_blank" rel="noopener">Fox News Channel, Fox Business, Fox Weather and Fox One</a>. Prediction market odds are supposedly replacing polls in how media reports on elections, policy and economic forecasts.</p>
+
+    <p>This went from fringe to infrastructure in about 18 months.</p>
+
+    <blockquote>
+      <p>A year ago this was a novelty. Today it is a $44 billion asset class with the CFTC on one side, 30+ state attorneys general on the other, and Robinhood quietly funneling retail traders into the middle of it.</p>
+    </blockquote>
+
+    <h2>Who's Using It — and Who's Being Targeted</h2>
+
+    <p>This is the part that made me sit up straight.</p>
+
+    <p>A January 2026 survey found that <a href="https://www.bloomberg.com/news/articles/gen-z-prediction-markets-survey-2026" target="_blank" rel="noopener">32% of Gen Z respondents and 24% of millennials</a> said they have either already used or plan to use prediction markets this year. Gen Z and millennials are more aware of platforms like Kalshi and Polymarket than they are of traditional sports betting sites.</p>
+
+    <p>And it's not an accident. Kalshi has been aggressively marketing to college campuses. They launched a <a href="https://www.wsj.com/finance/investing/kalshi-polymarket-teen-streamers-prediction-markets" target="_blank" rel="noopener">campus club sponsorship initiative</a>. They've paid college-aged influencers to create TikTok content — one 19-year-old's sponsored video racked up over 50 million views. Polymarket has reportedly offered to pay thousands of dollars to college fraternities for "epic parties" in exchange for user signups.</p>
+
+    <h3>Here's the Part That Raised My Eyebrows as a Mom</h3>
+
+    <p>Kalshi and Polymarket are open to anyone 18 or older. In most states, <a href="https://www.americangaming.org/research/state-gaming-map/" target="_blank" rel="noopener">online sports betting requires you to be 21</a>. So an 18-year-old college freshman who can't legally place a sports bet on DraftKings can open a Kalshi account and trade contracts on Fed rate decisions, geopolitical conflicts and the Super Bowl.</p>
+
+    <p>A <a href="https://www.truist.com/" target="_blank" rel="noopener">Truist analyst</a> noted that 18- to 20-year-olds could be contributing significantly to the growth surge. During the first week of January, college football wagers hit their highest percentage of total Kalshi volume at 32%.</p>
+
+    <p>The platform is also actively recruiting women. Female users now make up 26% of Kalshi's base, <a href="https://www.wsj.com/finance/kalshi-female-users-growth" target="_blank" rel="noopener">up from 13% just ten months ago</a> — driven in part by partnerships with female influencers and expansion into pop culture and entertainment markets beyond sports.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-number">32%</div>
+        <div class="stat-label">of Gen Z respondents have used or plan to use prediction markets in 2026</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">26%</div>
+        <div class="stat-label">of Kalshi users are now women, up from 13% ten months ago</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">18</div>
+        <div class="stat-label">minimum age to trade on Kalshi and Polymarket (vs. 21 for sports betting in most states)</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>Where Kalshi Is Currently Blocked or Facing Legal Action</h4>
+      <p><strong>Actively banned by court order:</strong> <a href="https://gaming.nv.gov/" target="_blank" rel="noopener">Nevada</a> is the only state with a standing, court-enforced injunction. A judge extended the ban in April 2026, and a permanent injunction is expected. Kalshi would need a state gaming license to operate there.</p>
+      <p><strong>Injunction on appeal:</strong> <a href="https://www.mass.gov/orgs/massachusetts-gaming-commission" target="_blank" rel="noopener">Massachusetts</a> secured an injunction that is currently on hold pending appeal.</p>
+      <p><strong>Criminal charges filed:</strong> <a href="https://www.azag.gov/" target="_blank" rel="noopener">Arizona</a> filed roughly 20 criminal counts against Kalshi alleging illegal gambling operations.</p>
+      <p><strong>Cease-and-desist letters or active litigation:</strong> <a href="https://www.nj.gov/oag/ge/" target="_blank" rel="noopener">New Jersey</a>, <a href="https://portal.ct.gov/DCP" target="_blank" rel="noopener">Connecticut</a>, <a href="https://www.tn.gov/" target="_blank" rel="noopener">Tennessee</a>, <a href="https://dllr.maryland.gov/" target="_blank" rel="noopener">Maryland</a>, <a href="https://casino.ohio.gov/" target="_blank" rel="noopener">Ohio</a>, <a href="https://dojmt.gov/" target="_blank" rel="noopener">Montana</a>, and more than two dozen other states have initiated proceedings. In total, Kalshi is fighting <a href="https://www.reuters.com/legal/kalshi-state-lawsuits-2026" target="_blank" rel="noopener">more than 30 state-level actions</a>, and lawmakers in 12 states have introduced legislation to ban or restrict the platform in 2026.</p>
+    </div>
+
+    <div class="callout">
+      <h4>Where Polymarket Is Currently Blocked or Facing Legal Action</h4>
+      <p><strong>Temporary restraining order:</strong> Nevada filed a civil complaint in January 2026 and a judge issued a TRO blocking Polymarket from offering contracts to Nevada residents.</p>
+      <p><strong>Cease-and-desist orders:</strong> Tennessee, Connecticut, New Jersey, Maryland, <a href="https://ag.ny.gov/" target="_blank" rel="noopener">New York</a>, and Massachusetts have all issued orders demanding Polymarket block their residents or cease operations.</p>
+      <p><strong>Active litigation:</strong> Polymarket has filed its own lawsuit against Massachusetts arguing that CFTC approval federally preempts state gambling law. That case, and several others, are expected to set precedent for the entire category.</p>
+      <p>And historically, Polymarket was <a href="https://www.cftc.gov/PressRoom/PressReleases/8478-22" target="_blank" rel="noopener">entirely off-limits to U.S. users from 2022 through late 2025</a> under a prior CFTC settlement — any American who traded on it during that window was technically using a VPN to bypass geoblocking.</p>
+    </div>
+
+    <h2>The Controversy You're Not Hearing About</h2>
+
+    <p>For all the Silicon Valley enthusiasm, prediction markets are walking a razor's edge between financial innovation and a gambling crisis dressed in fintech clothing.</p>
+
+    <p>Multiple U.S. states have filed enforcement actions against Kalshi, arguing that its sports prediction markets are a form of illegal gambling. The <a href="https://www.cftc.gov/PressRoom/PressReleases" target="_blank" rel="noopener">CFTC actually sued three states in early April</a> challenging their authority to regulate platforms like Kalshi — meaning the federal government is now actively litigating on behalf of the prediction market industry.</p>
+
+    <p>In Congress, a group of senators <a href="https://www.warren.senate.gov/newsroom/press-releases/warren-blumenthal-merkley-durbin-press-cftc-on-prediction-markets" target="_blank" rel="noopener">wrote a letter to the CFTC</a> warning that prediction markets tied to military operations or national security could be exploited by foreign adversaries. Markets on whether the U.S. would strike Iran or whether Supreme Leader Khamenei would be removed drew particular scrutiny.</p>
+
+    <p>There have been suspicious trades. During the Super Bowl, trades linked to <a href="https://www.wsj.com/finance/bezos-stepson-super-bowl-kalshi" target="_blank" rel="noopener">Jeff Bezos' stepson's fraternity</a> raised questions about insider activity. An anonymous trader called "AlphaRaccoon" <a href="https://www.bloomberg.com/news/articles/polymarket-alpharaccoon-google-year-in-search" target="_blank" rel="noopener">won over $1 million on Polymarket</a> by correctly predicting 22 of 23 outcomes for Google's Year in Search rankings — prompting widespread accusations of insider knowledge.</p>
+
+    <p>And then there's the teenage marketing. Kalshi signed a 15-year-old video game streamer to promote the platform on X before terminating the deal a week later when legal flagged it. The Kalshi employee's message to the kid — "legal team confirmed that we can't work with minors rn, kinda sad tbh" — was <a href="https://www.wsj.com/finance/investing/kalshi-polymarket-teen-streamers-prediction-markets" target="_blank" rel="noopener">reported by the Wall Street Journal</a> and tells you everything about the growth-at-all-costs mentality driving this industry.</p>
+
+    <p>One Kalshi-sponsored college student told the WSJ that a Kalshi supervisor instructed him to target students because they "spend money recklessly." Kalshi denies this.</p>
+
+    <h2>Why This Matters If You're Not a Trader</h2>
+
+    <p>Here's my take, and why I'm writing about this.</p>
+
+    <p>Prediction markets sit at the intersection of several things I've been paying attention to: the attention economy, financial literacy gaps, the gamification of everything, and the widening divide between people who understand how new financial instruments work and people who don't.</p>
+
+    <p>The <a href="https://www.federalreserve.gov/econres/notes/feds-notes/forecasting-economic-indicators-with-prediction-markets-20250815.html" target="_blank" rel="noopener">Federal Reserve has published research using Kalshi data</a> to forecast inflation and GDP. Kalshi's implied probabilities for FOMC decisions are now being compared to Bloomberg consensus estimates. Media organizations are replacing traditional polling with prediction market odds. This data is shaping how institutions make decisions.</p>
+
+    <p>Meanwhile, the average American answers fewer than half of basic financial literacy questions correctly, according to the <a href="https://gflec.org/initiatives/personal-finance-index/" target="_blank" rel="noopener">TIAA Institute–GFLEC Personal Finance Index</a>. Nearly half of TikTok creators earn under $15,000 a year. And now we're handing 18-year-olds access to a derivatives exchange that lets them trade on geopolitical conflict and monetary policy.</p>
+
+    <p>I'm not anti-prediction market. The concept is intellectually fascinating — markets as a truth-finding mechanism, where people put money behind their convictions rather than just tweeting about them. There's real value in that signal when the market is deep and liquid.</p>
+
+    <p>But I am cautious about an industry that is growing 130x in 18 months, is valued at $22 billion, is marketing to college freshmen, and is operating in a regulatory gray zone that the federal government is actively litigating. That combination of speed, money, youth targeting and legal ambiguity has a pattern I've seen before. It looks like early DraftKings. It looks like early crypto. It looks like every financial product that gets adopted fastest by the people who can least afford to lose.</p>
+
+    <blockquote>
+      <p>The attention gap isn't just about news and policy anymore. It's about entire financial categories being built, scaled and normalized in the time it takes most of us to finish a podcast.</p>
+    </blockquote>
+
+    <h2>What I'd Tell My Friends at the Dinner Table</h2>
+
+    <p>If you haven't heard of Kalshi or Polymarket, you will. Fox News is now showing their odds on air. Your college-aged kid may already have an account. Here's what's worth knowing:</p>
+
+    <h3>It's Not the Stock Market</h3>
+    <p>Prediction markets are event contracts — closer to derivatives than traditional investing. You're not building wealth. You're making directional bets on outcomes.</p>
+
+    <h3>The House Always Has an Edge</h3>
+    <p>Kalshi <a href="https://kalshi.com/docs/fees" target="_blank" rel="noopener">charges fees on every trade</a>. The platform makes money whether you win or lose. The fastest-growing product on Robinhood right now is Kalshi contracts — and Robinhood's business model is predicated on volume, not your returns.</p>
+
+    <h3>Regulation Is Unsettled</h3>
+    <p>States and the federal government are actively suing each other over who has authority. The rules could change dramatically in the next 12 months.</p>
+
+    <h3>The Data Is Genuinely Useful — If You're Consuming It, Not Trading It</h3>
+    <p>Prediction market odds on Fed decisions, economic indicators, and political outcomes are increasingly accurate and increasingly referenced by serious analysts. You can use these platforms as information tools without ever placing a trade.</p>
+
+    <h3>Ask Your Kids</h3>
+    <p>If you have an 18- to 25-year-old, ask them if they've heard of Kalshi or Polymarket. The answer might surprise you.</p>
+
+    <p>I downloaded Kalshi to see what the hype was about. What I found was a $44 billion industry that's growing faster than any financial product I've seen in 25 years of watching the internet — with all the promise and all the risk that implies.</p>
+
+    <blockquote>
+      <p>The question, as always, is who benefits most. And the answer, as always, depends on whether you're paying attention.</p>
+    </blockquote>
+
+  </article>
+
+  <hr class="section-break">
+
+  <div class="back-row">
+    <a class="back-link" href="/blog/">← All Posts</a>
+  </div>
+
+  <footer class="article-footer">
+    <div class="tags-row">
+      <span class="tag">Economy</span>
+      <span class="tag">Prediction Markets</span>
+      <span class="tag">Kalshi</span>
+      <span class="tag">Polymarket</span>
+      <span class="tag">Gen Z</span>
+      <span class="tag">Regulation</span>
+      <span class="tag">Fintech</span>
+    </div>
+    <div class="author-card">
+      <div class="author-avatar">B</div>
+      <div class="author-info">
+        <h4>Blagica Bottigliero</h4>
+        <p>Marketing consultant, Emmy-winning storyteller, and the founder of <a href="https://zlato.co" target="_blank" rel="noopener">Zlato</a> — a content brand and consultancy at the intersection of working motherhood, founder storytelling, and the economic influence of experienced women professionals. She writes about the things most people aren't paying attention to.</p>
+        <div class="author-links">
+          <a href="https://blagica.com">blagica.com</a>
+          <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co</a>
+          <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium</a>
+          <a href="https://www.linkedin.com/in/blagicabottigliero/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Blagica Bottigliero</p>
+  <div class="footer-links">
+    <a href="https://blagica.com">blagica.com</a>
+    <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co</a>
+    <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>
