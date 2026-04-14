@@ -77,6 +77,8 @@
     .post-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(196,92,114,0.1); }
     .card-thumb { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 2.8rem; color: rgba(255,255,255,0.3); }
     .card-thumb.pink { background: linear-gradient(135deg, var(--pink-pale), var(--pink)); }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .featured-visual img { width: 100%; height: 100%; object-fit: cover; }
     .card-category { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pink-deep); padding: 1rem 1.25rem 0; }
     .post-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; line-height: 1.25; padding: 0.5rem 1.25rem 0; }
     .card-excerpt { font-size: 0.82rem; line-height: 1.6; color: var(--ink-soft); padding: 0.5rem 1.25rem 0; }
@@ -122,19 +124,19 @@
 
 <!-- FEATURED POST -->
 <section class="featured-wrap fade-up">
-  <a class="featured-post" href="/blog/whos-actually-paying-attention.html">
+  <a class="featured-post" href="/blog/what-if-we-stopped-pretending.html">
     <div class="featured-body">
       <p class="featured-label">✦ Featured Post</p>
-      <h2>Who's Actually Paying Attention? The Growing Gap Between Those Who Adapt and Those Who Don't</h2>
-      <p class="excerpt">AI is reshaping the economy. College majors are disappearing. The creator economy is a myth for most. And the people who benefit most from your inattention are billionaires.</p>
+      <h2>What If We Stopped Pretending Our Kids Are Fine?</h2>
+      <p class="excerpt">What China is doing about screens, social media, and AI for kids — and what we can borrow without becoming them.</p>
       <div class="post-meta">
-        <span class="tag">Economy</span>
+        <span class="tag">Parenting</span>
         <span class="tag">AI</span>
         <span class="post-date">April 2026</span>
       </div>
     </div>
     <div class="featured-visual">
-      <span class="glyph">✦</span>
+      <img src="/kids-screens.jpg" alt="Teenager looking at phone screen at night">
     </div>
   </a>
 </section>
@@ -145,7 +147,16 @@
 
   <div class="post-grid">
 
-    <!-- POST CARD: Who's Actually Paying Attention -->
+    <!-- POST CARD: What If We Stopped Pretending (newest) -->
+    <a class="post-card fade-up" href="/blog/what-if-we-stopped-pretending.html">
+      <div class="card-thumb"><img src="/kids-screens.jpg" alt="Teenager looking at phone screen at night"></div>
+      <p class="card-category">Parenting · AI · Screen Time</p>
+      <h3>What If We Stopped Pretending Our Kids Are Fine?</h3>
+      <p class="card-excerpt">What China is doing about screens, social media, and AI for kids — and what we can borrow without becoming them.</p>
+      <span class="card-date">April 2026</span>
+    </a>
+
+    <!-- POST CARD: Kalshi -->
     <a class="post-card fade-up" href="/blog/kalshi-prediction-markets.html">
       <div class="card-thumb pink">✦</div>
       <p class="card-category">Economy · Prediction Markets</p>
