@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Vibe Coding Pushback Isn't Really About the Code — Blagica Bottigliero</title>
+  <meta name="description" content="Yes, vibe-coded MVPs break. Here's what the stats actually say — and what the people ripping on us seem to be forgetting about who was allowed to build before." />
+  <meta property="og:title" content="The Vibe Coding Pushback Isn't Really About the Code" />
+  <meta property="og:description" content="Yes, vibe-coded MVPs break. Here's what the stats actually say — and what the people ripping on us seem to be forgetting about who was allowed to build before." />
+  <meta property="og:url" content="https://blagica.com/blog/vibe-coding-pushback.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #E8A0A8;
+      --pink-deep:  #C45C72;
+      --pink-pale:  #FDF0F2;
+      --ink:        #1A1118;
+      --ink-soft:   #5A4A52;
+      --rule:       #EAD8DC;
+      --white:      #FFFFFF;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5vw;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--pink-deep); }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 680px; margin: 0 auto; padding: 0 5vw; }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3rem;
+    }
+    .article-category {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pink-deep);
+      margin-bottom: 1rem;
+    }
+    .article-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .article-header h1 em { font-style: italic; color: var(--pink-deep); }
+    .article-deck {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .article-meta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    .author-line { display: flex; align-items: center; gap: 0.6rem; }
+    .author-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 0.9rem;
+      color: white; flex-shrink: 0;
+    }
+    .author-name { font-size: 0.85rem; font-weight: 500; color: var(--ink); }
+    .meta-sep { color: var(--rule); }
+    .article-date, .read-time { font-size: 0.82rem; color: var(--ink-soft); }
+
+    /* HERO */
+    .article-hero {
+      background: linear-gradient(150deg, var(--pink) 0%, var(--pink-deep) 100%);
+      border-radius: 3px;
+      height: 300px;
+      margin-bottom: 3rem;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 5rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ARTICLE BODY */
+    .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink); margin-bottom: 4rem; }
+    .article-body p { margin-bottom: 1.6rem; }
+    .article-body h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.65rem; line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin: 2.75rem 0 1rem;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--pink-deep);
+      margin: 2.5rem 0;
+      padding: 1.25rem 1.75rem;
+      background: var(--pink-pale);
+      border-radius: 0 3px 3px 0;
+    }
+    .article-body blockquote p {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem; line-height: 1.5;
+      font-style: italic; color: var(--ink); margin: 0;
+    }
+    .article-body a { color: var(--pink-deep); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { text-decoration: none; }
+    .article-body strong { font-weight: 500; }
+    .article-body em { font-style: italic; }
+    .article-body ul { margin: 0 0 1.6rem 1.5rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.7; }
+    hr.section-break { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    /* ARTICLE FOOTER */
+    .article-footer { border-top: 1px solid var(--rule); padding: 2.5rem 0; margin-bottom: 4rem; }
+    .tags-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .tag {
+      background: var(--pink-pale); color: var(--pink-deep);
+      border: 1px solid var(--rule); padding: 0.25rem 0.75rem;
+      border-radius: 2px; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .author-card {
+      background: var(--pink-pale); border: 1px solid var(--rule);
+      border-radius: 3px; padding: 2rem;
+      display: flex; gap: 1.5rem; align-items: flex-start;
+    }
+    .author-avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+      color: white; flex-shrink: 0;
+    }
+    .author-info h4 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .author-info p { font-size: 0.88rem; line-height: 1.6; color: var(--ink-soft); margin-bottom: 0.75rem; }
+    .author-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .author-links a { font-size: 0.78rem; font-weight: 500; color: var(--pink-deep); text-decoration: none; letter-spacing: 0.04em; }
+    .author-links a:hover { text-decoration: underline; }
+
+    /* BACK LINK */
+    .back-row { padding: 0 0 4rem; text-align: center; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-soft);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--pink-deep); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--rule); padding: 2rem 5vw;
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    footer p { font-size: 0.8rem; color: var(--ink-soft); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    footer a { font-size: 0.8rem; color: var(--pink-deep); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* FADE IN */
+    .fade-up { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      .author-card { flex-direction: column; gap: 1rem; }
+      .nav-links { gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="https://blagica.com">Blagica</a>
+  <ul class="nav-links">
+    <li><a href="https://blagica.com">Home</a></li>
+    <li><a href="https://blagica.com/#work">Work</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="https://zlato.co" target="_blank" rel="noopener">Zlato ↗</a></li>
+  </ul>
+</nav>
+
+<main class="article-wrap">
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header fade-up">
+    <p class="article-category">Vibe Coding · Women in Tech · Pushback</p>
+    <h1>The Vibe Coding Pushback Isn't Really <em>About the Code.</em></h1>
+    <p class="article-deck">Yes, vibe-coded MVPs break. Here's what the stats actually say — and what the people ripping on us seem to have conveniently forgotten about who was allowed to build before.</p>
+    <div class="article-meta">
+      <div class="author-line">
+        <div class="author-dot">B</div>
+        <span class="author-name">Blagica Bottigliero</span>
+      </div>
+      <span class="meta-sep">·</span>
+      <span class="article-date">May 2026</span>
+      <span class="meta-sep">·</span>
+      <span class="read-time">7 min read</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="article-hero fade-up">✦</div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body fade-up">
+
+    <p>The vibe coding backlash has arrived right on schedule. Open LinkedIn, open X, open any developer Substack, and you'll find some version of the same take: vibe-coded apps are insecure, vibe-coded MVPs don't scale, vibe coders aren't <em>real</em> engineers. The crash is coming. The reckoning is here. We told you so.</p>
+
+    <p>And look — some of it isn't wrong. So let's just put the receipts on the table first, because I'm not interested in pretending the criticism is invented.</p>
+
+    <h2>The stats the critics are waving around. Fine. Here they are.</h2>
+
+    <p>Veracode's 2025 GenAI Code Security Report found that <strong>45% of AI-generated code samples contained OWASP Top 10 vulnerabilities</strong>. A separate audit of <a href="https://www.csoonline.com/article/4116923/output-from-vibe-coding-tools-prone-to-critical-security-flaws-study-finds.html" target="_blank" rel="noopener">1,645 apps built on Lovable</a> found that <strong>10.3% had critical row-level security flaws</strong> in their Supabase configs — the kind that let any random user read any other user's data. Other research puts AI-generated code at <strong>2.74x more vulnerabilities</strong> than what humans write by hand.</p>
+
+    <p>It gets worse the more you iterate. In one study, researchers had GPT-4o revise its own code up to 40 times. By the fifth round, the code had <strong>37% more critical vulnerabilities</strong> than the initial version. The longer you vibe, the more the cracks compound.</p>
+
+    <p>And there's the now-famous SaaStr horror story, where an AI agent — over the course of one long session — ignored a code freeze, lied about running tests, and eventually <a href="https://www.aikido.dev/blog/vibe-coding-security" target="_blank" rel="noopener">deleted the entire production database</a>. Months of executive records, gone.</p>
+
+    <p>So yes. The critics have material. Vibe-coded apps can leak data. Vibe-coded MVPs can collapse under any real traffic. A founder shipping a Lovable app to paying customers without a security review is, statistically, shipping a problem.</p>
+
+    <p><strong>Cool. Now let's talk about the part nobody putting these stats in a quote-tweet wants to talk about.</strong></p>
+
+    <h2>The barrier I used to live behind. And every woman with an idea lived behind.</h2>
+
+    <p>Here is what building an MVP looked like in 2018. In 2015. In 2010. In 2005. Any year before this one, basically.</p>
+
+    <p>You had an idea. Maybe a great one. Maybe one nobody else was going to think of because it was rooted in a problem you'd actually lived. So you went to figure out how to build it. And you found out:</p>
+
+    <ul>
+      <li>A simple web-based MVP cost <strong>$15,000 to $50,000</strong> if you outsourced it.</li>
+      <li>Anything complex landed at <strong>$100,000+</strong>.</li>
+      <li>Even a clickable prototype — just enough to validate the concept — ran <strong>$5,000 to $15,000</strong>.</li>
+      <li>Agencies charged $50–$150 an hour. Freelancers were cheaper, but you couldn't tell the good ones from the ones who would ghost you with $8K of your money.</li>
+    </ul>
+
+    <p>If you didn't have that cash, you had three options. Find a technical co-founder, which in practice meant finding a man willing to give you the time of day in exchange for 50% of your company. Call in a favor from someone in your network, which assumed your network had the right someone in it. Or wait. Most of us waited.</p>
+
+    <p>I waited on ideas for years. <em>Years.</em> I had concepts I knew were good, that I had the strategy and the audience and the marketing chops to ship — and the build cost alone meant they sat in a Notes file. I have one I started writing in 2014 that is finally — <em>finally</em> — about to launch this year, because I can finally build it myself.</p>
+
+    <blockquote>
+      <p>The version of "the bar was higher back then" that people are nostalgic for is a version where most of us weren't allowed in the room.</p>
+    </blockquote>
+
+    <p>And let's not pretend this was distributed evenly. <a href="https://www.bcg.com/publications/2018/why-women-owned-startups-are-better-bet" target="_blank" rel="noopener">BCG's research</a> on women founders showed we received less than half the funding men did per dollar pitched — and still generated 2.5x better returns on what we got. So when the bar to even <em>test</em> an idea was $30K and a technical co-founder, you can do the math on who never got to find out if their idea would have worked.</p>
+
+    <h2>So here come the tools. And here comes the eye-rolling.</h2>
+
+    <p>Vibe coding shows up. Lovable, Cursor, Replit, Bolt, Claude, the whole stack. Suddenly the $30K MVP is something I can sketch out over a weekend. Suddenly I can validate the idea before I ask a single person for money. Suddenly the friend with the idea who's been stuck for a decade has the same access I do.</p>
+
+    <p>And the response from a loud slice of the developer world has been — let's just call it what it is — <em>contemptuous</em>. "It's not real coding." "You're going to embarrass yourself." "Wait until it breaks." "You don't even know what you've shipped."</p>
+
+    <p>One <a href="https://medium.com/@albertocardenascom/the-end-of-coding-elitism-how-linus-torvalds-legitimized-vibe-coding-a671f61be58b" target="_blank" rel="noopener">writer put it perfectly</a>: there's a "romantic and toxic idea that if you didn't write every character with your own fingers, suffering with documentation open in another tab, you're not a real programmer." That's not a critique of bad code. That's a gate. And the people manning it are not, broadly speaking, the people who lived behind the old gate.</p>
+
+    <p>Here's what I keep noticing: a lot of the loudest critics are not people who used to defend non-technical founders when the toll was $50K and a co-founder hunt. They were fine with <em>that</em> filter. The problem isn't that bad code exists. The problem is that <em>we</em> are the ones writing it now.</p>
+
+    <h2>What an MVP is. What an MVP isn't.</h2>
+
+    <p>Let's also be honest about the category we're talking about. A minimum viable product is, by definition, a thing you ship to learn. It is supposed to be fragile. It is supposed to be ugly. It is supposed to have edges. The whole point is to find out whether the idea has a pulse before you spend real money making it bulletproof.</p>
+
+    <p>Vibe-coded MVPs are <em>excellent</em> for that. Use the JPMorgan founder guide, the YC playbook, any of the 2026 startup writeups — they all say the same thing. <a href="https://www.jpmorgan.com/insights/technology/artificial-intelligence/vibe-coding-a-guide-for-startups-and-founders" target="_blank" rel="noopener">Vibe code to validate. Hire engineers to scale.</a> Those are two different phases of the same business. The criticism collapses them into one and pretends nobody can tell the difference. Most of us can. I can.</p>
+
+    <p>The 96% of developers who don't fully trust AI-generated code? Good. Don't. The 23% of frontend devs who actually review AI output for security before shipping? That number should be higher, and it will be, because the tools and the norms around them are eighteen months old. Every category of software went through this. Remember when "anyone can build a website on Squarespace" was an insult? Remember when a website used to cost $40K?</p>
+
+    <blockquote>
+      <p>The surface area of buildable software just got dramatically bigger. The amount of useful software in the world goes up. The work for real engineers — to harden, secure, refactor what we build — also goes up. Nobody loses here. Unless the point was the gate.</p>
+    </blockquote>
+
+    <h2>And the part that's a little quieter in these conversations.</h2>
+
+    <p>A huge share of the people picking up these tools right now are women. Women in their 30s, 40s, 50s, with ideas they've been carrying for a decade. Women who already run the household, the calendar, the budget, the soft launch of every life decision in a five-mile radius. Women who absolutely have the product instincts and the customer empathy and the resilience — and who, until 2024, did not have the build budget.</p>
+
+    <p>Watch who's quietly shipping right now. It's not just the 22-year-old Stanford CS grad. It's the mom who finally built the school logistics app she's been wanting since her kid started kindergarten. It's the operator who automated her own job out of existence and turned the automation into a product. It's the strategist who launched the platform she pitched in three different rooms in 2019 and got told "find a CTO."</p>
+
+    <p>The pushback hits this group hardest. Because the message lands as: <em>you weren't allowed before, and now that you are, we'd like you to know that what you're doing doesn't count.</em></p>
+
+    <p>It counts.</p>
+
+    <hr class="section-break" />
+
+    <h2>What I actually want you to take from this.</h2>
+
+    <p>If you're a developer worried about security in AI-generated code — you're right to be. Write the threat models. Build the linters. Open-source the audit tools. There's a real, valuable, well-paid future for engineers who help vibe-coded apps grow up. That's a constructive lane and a lot of people are already in it.</p>
+
+    <p>If you're a founder vibe coding your way to an MVP — keep going. <em>And</em> know what you have. A vibe-coded app is a prototype with a pulse. It is enough to validate, enough to test, enough to put in front of ten real users and learn something. It is not yet a production system. When you have proof the idea has legs, get a real engineer on it before you take money from real customers. That's not gatekeeping. That's just the next stage of the build.</p>
+
+    <p>And if you're the person sharpening a quote-tweet about how vibe coders are going to "find out the hard way" — ask yourself, honestly, whether you were equally loud about the $50K wall that locked half the people with good ideas out of the room for the last twenty years. If the answer is no, then your concern isn't really about code quality. It's about who gets to call themselves a builder. And that argument was always going to lose.</p>
+
+    <p><strong>The gate is open. We're walking through it. The receipts on what we build will speak for themselves — same way yours did.</strong></p>
+
+  </article>
+
+  <!-- ARTICLE FOOTER -->
+  <footer class="article-footer fade-up">
+    <div class="tags-row">
+      <span class="tag">Vibe Coding</span>
+      <span class="tag">Women in Tech</span>
+      <span class="tag">Founders</span>
+      <span class="tag">MVP</span>
+      <span class="tag">Gatekeeping</span>
+    </div>
+    <div class="author-card">
+      <div class="author-avatar">B</div>
+      <div class="author-info">
+        <h4>Blagica Bottigliero</h4>
+        <p>Emmy-winning media creator and fractional growth strategist with 25+ years at the intersection of marketing, technology, and culture. Founder of Zlato. Building things at 50.</p>
+        <div class="author-links">
+          <a href="https://blagica.com">blagica.com</a>
+          <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co</a>
+          <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium</a>
+          <a href="https://www.linkedin.com/in/blagicabottigliero/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-row fade-up">
+    <a class="back-link" href="/blog/">← All Posts</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Blagica Bottigliero</p>
+  <div class="footer-links">
+    <a href="https://blagica.com">blagica.com</a>
+    <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co</a>
+    <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium ↗</a>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+      }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
