@@ -270,9 +270,28 @@
 </style>
 
 <style>
-  /* Hero image */
-  .article-hero { overflow: hidden; padding: 0; height: auto; aspect-ratio: 16 / 10; }
-  .article-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Hero image — portrait-friendly framing */
+  .article-hero {
+    background: linear-gradient(150deg, var(--pink) 0%, var(--pink-deep) 100%);
+    border-radius: 3px;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .article-hero img {
+    max-width: 100%;
+    max-height: 520px;
+    width: auto;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+    box-shadow: 0 18px 44px rgba(26, 17, 24, 0.22);
+  }
   /* FAQ */
   .article-body dl.faq { margin: 1rem 0 2rem; padding: 0; }
   .article-body dl.faq dt { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--ink); margin: 1.5rem 0 0.4rem; line-height: 1.3; }
