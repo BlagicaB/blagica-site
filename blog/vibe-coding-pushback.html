@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Vibe Coding Pushback Isn't Really About the Code | Blagica Bottigliero</title>
+  <meta name="description" content="Yes, vibe-coded MVPs break — and the stats prove it. But the critics conveniently forgot about the $50K wall that kept most non-technical founders, especially women, out of the room for two decades." />
+  <meta name="keywords" content="vibe coding, AI coding, MVP, non-technical founder, women in tech, AI pushback, IP ownership AI, AEO, AI tools for founders" />
+  <meta name="author" content="Blagica Bottigliero" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://blagica.com/blog/vibe-coding-pushback.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Vibe Coding Pushback Isn't Really About the Code" />
+  <meta property="og:description" content="Yes, vibe-coded MVPs break — and the stats prove it. But the critics conveniently forgot about the $50K wall that kept most non-technical founders, especially women, out of the room for two decades." />
+  <meta property="og:url" content="https://blagica.com/blog/vibe-coding-pushback.html" />
+  <meta property="og:image" content="https://blagica.com/vibe-coding-pushback.jpg" />
+  <meta property="og:image:alt" content="Two women laughing together at a meetup, hands raised, captured in a selfie." />
+  <meta property="og:site_name" content="Blagica Bottigliero" />
+  <meta property="article:author" content="Blagica Bottigliero" />
+  <meta property="article:published_time" content="2026-05-28" />
+  <meta property="article:section" content="Vibe Coding" />
+  <meta property="article:tag" content="Vibe Coding" />
+  <meta property="article:tag" content="Women in Tech" />
+  <meta property="article:tag" content="Founders" />
+  <meta property="article:tag" content="MVP" />
+  <meta property="article:tag" content="AI" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Vibe Coding Pushback Isn't Really About the Code" />
+  <meta name="twitter:description" content="Yes, vibe-coded MVPs break — and the stats prove it. But the critics conveniently forgot about the $50K wall that kept most non-technical founders, especially women, out of the room." />
+  <meta name="twitter:image" content="https://blagica.com/vibe-coding-pushback.jpg" />
+  <meta name="twitter:image:alt" content="Two women laughing together at a meetup, hands raised, captured in a selfie." />
+
+  <!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  ARTICLE — Vibe Coding Pushback (LIVE)               ║
+  ║  Hero image: /vibe-coding-pushback.jpg               ║
+  ║  Listed on /blog/ + /sitemap.xml                     ║
+  ╚══════════════════════════════════════════════════════╝
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #E8A0A8;
+      --pink-deep:  #C45C72;
+      --pink-pale:  #FDF0F2;
+      --ink:        #1A1118;
+      --ink-soft:   #5A4A52;
+      --rule:       #EAD8DC;
+      --white:      #FFFFFF;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5vw;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--pink-deep); }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 680px; margin: 0 auto; padding: 0 5vw; }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3rem;
+    }
+    .article-category {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pink-deep);
+      margin-bottom: 1rem;
+    }
+    .article-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .article-header h1 em { font-style: italic; color: var(--pink-deep); }
+    .article-deck {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .article-meta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    .author-line { display: flex; align-items: center; gap: 0.6rem; }
+    .author-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 0.9rem;
+      color: white; flex-shrink: 0;
+    }
+    .author-name { font-size: 0.85rem; font-weight: 500; color: var(--ink); }
+    .meta-sep { color: var(--rule); }
+    .article-date, .read-time { font-size: 0.82rem; color: var(--ink-soft); }
+
+    /* HERO */
+    .article-hero {
+      background: linear-gradient(150deg, var(--pink) 0%, var(--pink-deep) 100%);
+      border-radius: 3px;
+      height: 300px;
+      margin-bottom: 3rem;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 5rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ARTICLE BODY */
+    .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink); margin-bottom: 4rem; }
+    .article-body p { margin-bottom: 1.6rem; }
+    .article-body h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.65rem; line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin: 2.75rem 0 1rem;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--pink-deep);
+      margin: 2.5rem 0;
+      padding: 1.25rem 1.75rem;
+      background: var(--pink-pale);
+      border-radius: 0 3px 3px 0;
+    }
+    .article-body blockquote p {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem; line-height: 1.5;
+      font-style: italic; color: var(--ink); margin: 0;
+    }
+    .article-body a { color: var(--pink-deep); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { text-decoration: none; }
+    .article-body strong { font-weight: 500; }
+    .article-body em { font-style: italic; }
+    .article-body ul { margin: 0 0 1.6rem 1.5rem; }
+    .article-body li { margin-bottom: 0.6rem; line-height: 1.7; }
+    hr.section-break { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    /* ARTICLE FOOTER */
+    .article-footer { border-top: 1px solid var(--rule); padding: 2.5rem 0; margin-bottom: 4rem; }
+    .tags-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .tag {
+      background: var(--pink-pale); color: var(--pink-deep);
+      border: 1px solid var(--rule); padding: 0.25rem 0.75rem;
+      border-radius: 2px; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .author-card {
+      background: var(--pink-pale); border: 1px solid var(--rule);
+      border-radius: 3px; padding: 2rem;
+      display: flex; gap: 1.5rem; align-items: flex-start;
+    }
+    .author-avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+      color: white; flex-shrink: 0;
+    }
+    .author-info h4 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .author-info p { font-size: 0.88rem; line-height: 1.6; color: var(--ink-soft); margin-bottom: 0.75rem; }
+    .author-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .author-links a { font-size: 0.78rem; font-weight: 500; color: var(--pink-deep); text-decoration: none; letter-spacing: 0.04em; }
+    .author-links a:hover { text-decoration: underline; }
+
+    /* BACK LINK */
+    .back-row { padding: 0 0 4rem; text-align: center; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-soft);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--pink-deep); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--rule); padding: 2rem 5vw;
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    footer p { font-size: 0.8rem; color: var(--ink-soft); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    footer a { font-size: 0.8rem; color: var(--pink-deep); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* FADE IN */
+    .fade-up { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      .author-card { flex-direction: column; gap: 1rem; }
+      .nav-links { gap: 1.25rem; }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+  /* UNIFIED NAV — matches blagica.com home */
+  nav { position: sticky; top: 0; z-index: 100; background: #fff; backdrop-filter: none; border-bottom: 1px solid #f0e0e8; display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; height: 64px; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #D4176A; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+  .nav-links a { text-decoration: none; color: #2A2A2A; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: #D4176A; }
+  .nav-cta { background: #D4176A; color: #fff; padding: 0.55rem 1.1rem; text-decoration: none; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s; display: inline-block; border: 2px solid #D4176A; }
+  .nav-cta:hover { background: #b01258; }
+  .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 24px; height: 18px; background: none; border: none; cursor: pointer; padding: 0; }
+  .hamburger span { display: block; height: 2px; background: #0F0F0F; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  @media (max-width: 960px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .nav-links.mobile-open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: #fff; border-bottom: 1px solid #f0e0e8; padding: 1.5rem 2rem; gap: 1.25rem; z-index: 99; }
+    .nav-links.mobile-open + .nav-cta { display: inline-block; position: absolute; top: 76px; right: 1.5rem; z-index: 100; }
+  }
+</style>
+
+<style>
+  /* Hero image — portrait-friendly framing */
+  .article-hero {
+    background: linear-gradient(150deg, var(--pink) 0%, var(--pink-deep) 100%);
+    border-radius: 3px;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .article-hero img {
+    max-width: 100%;
+    max-height: 520px;
+    width: auto;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+    box-shadow: 0 18px 44px rgba(26, 17, 24, 0.22);
+  }
+  /* FAQ */
+  .article-body dl.faq { margin: 1rem 0 2rem; padding: 0; }
+  .article-body dl.faq dt { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--ink); margin: 1.5rem 0 0.4rem; line-height: 1.3; }
+  .article-body dl.faq dd { margin: 0 0 1rem; padding: 0; line-height: 1.7; color: var(--ink); }
+</style>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Vibe Coding Pushback Isn't Really About the Code",
+  "alternativeHeadline": "Yes, vibe-coded MVPs break. Here's what the stats say — and what the critics forgot about who was allowed to build before.",
+  "description": "Yes, vibe-coded MVPs break — and the stats prove it. But the critics conveniently forgot about the $50K wall that kept most non-technical founders, especially women, out of the room for two decades.",
+  "image": "https://blagica.com/vibe-coding-pushback.jpg",
+  "datePublished": "2026-05-28",
+  "dateModified": "2026-05-28",
+  "wordCount": "2400",
+  "keywords": "vibe coding, AI coding, MVP, non-technical founder, women in tech, AI pushback, IP ownership AI",
+  "articleSection": "Vibe Coding",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Person",
+    "name": "Blagica Bottigliero",
+    "url": "https://blagica.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/blagicabottigliero/",
+      "https://medium.com/@blagica",
+      "https://zlato.co"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Blagica Bottigliero",
+    "url": "https://blagica.com",
+    "logo": { "@type": "ImageObject", "url": "https://blagica.com/favicon.png" }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blagica.com/blog/vibe-coding-pushback.html"
+  }
+}
+</script>
+
+<!-- JSON-LD: FAQPage (AEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is vibe coding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vibe coding is building software by describing what you want in natural language and letting AI tools generate the code. Platforms like Cursor, Lovable, Replit and Claude let a non-developer direct, edit and ship working software without writing the syntax by hand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is vibe coding safe for production use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not without review. Studies show 45% of AI-generated code carries OWASP Top 10 vulnerabilities and AI-written code averages 2.74x more vulnerabilities than human-written equivalents. Vibe coding is excellent for validating an idea or shipping an MVP to early users. Before taking money from real customers, bring in an engineer to harden, secure and refactor the build."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you own the IP of code built with AI tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally yes. OpenAI, Anthropic and Google all assign IP rights in outputs to the user under their terms of service. The U.S. Copyright Office requires meaningful human authorship for copyright, and a founder who directs, selects, edits and assembles AI output supplies exactly that. Verbatim regurgitation of licensed code is a narrow, separate risk worth scanning for with tools like Snyk or GitGuardian."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the pushback on vibe coding target women founders most?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the people most enabled by these tools are the ones who were locked out of building before. Many of them are women. When the bar to test an idea was a $30K MVP plus a technical co-founder, most non-technical women never got to find out if their idea would have worked. Now that they can build, the framing of vibe coding as 'not real coding' lands as gatekeeping."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are real examples of things people are building with vibe coding right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Real-world examples observed in 2026 founder communities include creatives running custom databases for portfolio and client work, parents prototyping kid-safety applications that fit how their family actually uses devices, founders shipping city-specific civic tools to solve local problems and small teams building real-time legislation trackers that pull state-level bills into a single feed."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">blagica bottigliero</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/#tracks">Work With Me</a></li>
+    <li><a href="/#builder">Building</a></li>
+    <li><a href="/#speaking">Speaking</a></li>
+    <li><a href="/#podcast">Podcast</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/aithetable/" style="color:#D4176A;font-weight:700">Learn AI ✦</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="https://calendly.com/blagica-bottigliero/chat" target="_blank" rel="noopener">Let's Talk</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main class="article-wrap">
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header fade-up">
+    <p class="article-category">Vibe Coding · Women in Tech · Pushback</p>
+    <h1>The Vibe Coding Pushback Isn't Really <em>About the Code.</em></h1>
+    <p class="article-deck">Yes, vibe-coded MVPs break. Here's what the stats actually say — and what the people ripping on us seem to have conveniently forgotten about who was allowed to build before.</p>
+    <div class="article-meta">
+      <div class="author-line">
+        <div class="author-dot">B</div>
+        <span class="author-name">Blagica Bottigliero</span>
+      </div>
+      <span class="meta-sep">·</span>
+      <span class="article-date">May 2026</span>
+      <span class="meta-sep">·</span>
+      <span class="read-time">10 min read</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <figure class="article-hero fade-up">
+    <img src="/vibe-coding-pushback.jpg" alt="Blagica Bottigliero with a friend at a women-in-AI meetup, both laughing in a selfie, hands raised — the kind of room where vibe coders are quietly shipping." width="1280" height="800" loading="eager" decoding="async" fetchpriority="high" />
+  </figure>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body fade-up">
+
+    <p>The vibe coding backlash has arrived right on schedule. Open LinkedIn, open X, open any developer Substack and you'll find some version of the same take: vibe-coded apps are insecure, vibe-coded MVPs don't scale, vibe coders aren't <em>real</em> engineers. The crash is coming. The reckoning is here. We told you so.</p>
+
+    <p>And look — some of it isn't wrong. So let's just put the receipts on the table first, because I'm not interested in pretending the criticism is invented.</p>
+
+    <h2>The stats the critics are waving around. Fine. Here they are.</h2>
+
+    <p>Veracode's 2025 GenAI Code Security Report found that <strong>45% of AI-generated code samples contained OWASP Top 10 vulnerabilities</strong>. A separate audit of <a href="https://www.csoonline.com/article/4116923/output-from-vibe-coding-tools-prone-to-critical-security-flaws-study-finds.html" target="_blank" rel="noopener">1,645 apps built on Lovable</a> found that <strong>10.3% had critical row-level security flaws</strong> in their Supabase configs — the kind that let any random user read any other user's data. Other research puts AI-generated code at <strong>2.74x more vulnerabilities</strong> than what humans write by hand.</p>
+
+    <p>It gets worse the more you iterate. In one study, researchers had GPT-4o revise its own code up to 40 times. By the fifth round, the code had <strong>37% more critical vulnerabilities</strong> than the initial version. The longer you vibe, the more the cracks compound.</p>
+
+    <p>And there's the now-famous SaaStr horror story, where an AI agent — over the course of one long session — ignored a code freeze, lied about running tests and eventually <a href="https://www.aikido.dev/blog/vibe-coding-security" target="_blank" rel="noopener">deleted the entire production database</a>. Months of executive records, gone.</p>
+
+    <p>So yes. The critics have material. Vibe-coded apps can leak data. Vibe-coded MVPs can collapse under any real traffic. A founder shipping a Lovable app to paying customers without a security review is, statistically, shipping a problem.</p>
+
+    <p><strong>Cool. Now let's talk about the part nobody putting these stats in a quote-tweet wants to talk about.</strong></p>
+
+    <h2>The barrier I used to live behind. And every woman with an idea lived behind.</h2>
+
+    <p>Here is what building an MVP looked like in 2018. In 2015. In 2010. In 2005. Any year before this one, basically.</p>
+
+    <p>You had an idea. Maybe a great one. Maybe one nobody else was going to think of because it was rooted in a problem you'd actually lived. So you went to figure out how to build it. And you found out:</p>
+
+    <ul>
+      <li>A simple web-based MVP cost <strong>$15,000 to $50,000</strong> if you outsourced it.</li>
+      <li>Anything complex landed at <strong>$100,000+</strong>.</li>
+      <li>Even a clickable prototype — just enough to validate the concept — ran <strong>$5,000 to $15,000</strong>.</li>
+      <li>Agencies charged $50–$150 an hour. Freelancers were cheaper, but you couldn't tell the good ones from the ones who would ghost you with $8K of your money.</li>
+    </ul>
+
+    <p>If you didn't have that cash, you had three options. Find a technical co-founder, which in practice meant finding a man willing to give you the time of day in exchange for 50% of your company. Call in a favor from someone in your network, which assumed your network had the right someone in it. Or wait. Most of us waited.</p>
+
+    <p>I waited on ideas for years. <em>Years.</em> I had concepts I knew were good, that I had the strategy and the audience and the marketing chops to ship — and the build cost alone meant they sat in a Notes file. I have one I started writing in 2014 that is finally — <em>finally</em> — about to launch this year, because I can finally build it myself.</p>
+
+    <blockquote>
+      <p>The version of "the bar was higher back then" that people are nostalgic for is a version where most of us weren't allowed in the room.</p>
+    </blockquote>
+
+    <p>And let's not pretend this was distributed evenly. <a href="https://www.bcg.com/publications/2018/why-women-owned-startups-are-better-bet" target="_blank" rel="noopener">BCG's research</a> on women founders showed we received less than half the funding men did per dollar pitched — and still generated 2.5x better returns on what we got. So when the bar to even <em>test</em> an idea was $30K and a technical co-founder, you can do the math on who never got to find out if their idea would have worked.</p>
+
+    <h2>So here come the tools. And here comes the eye-rolling.</h2>
+
+    <p>Vibe coding shows up. Lovable, Cursor, Replit, Bolt, Claude, the whole stack. Suddenly the $30K MVP is something I can sketch out over a weekend. Suddenly I can validate the idea before I ask a single person for money. Suddenly the friend with the idea who's been stuck for a decade has the same access I do.</p>
+
+    <p>And the response from a loud slice of the developer world has been — let's just call it what it is — <em>contemptuous</em>. "It's not real coding." "You're going to embarrass yourself." "Wait until it breaks." "You don't even know what you've shipped."</p>
+
+    <p>One <a href="https://medium.com/@albertocardenascom/the-end-of-coding-elitism-how-linus-torvalds-legitimized-vibe-coding-a671f61be58b" target="_blank" rel="noopener">writer put it perfectly</a>: there's a "romantic and toxic idea that if you didn't write every character with your own fingers, suffering with documentation open in another tab, you're not a real programmer." That's not a critique of bad code. That's a gate. And the people manning it are not, broadly speaking, the people who lived behind the old gate.</p>
+
+    <p>Here's what I keep noticing: a lot of the loudest critics are not people who used to defend non-technical founders when the toll was $50K and a co-founder hunt. They were fine with <em>that</em> filter. The problem isn't that bad code exists. The problem is that <em>we</em> are the ones writing it now.</p>
+
+    <h2>What an MVP is. What an MVP isn't.</h2>
+
+    <p>Let's also be honest about the category we're talking about. A minimum viable product is, by definition, a thing you ship to learn. It is supposed to be fragile. It is supposed to be ugly. It is supposed to have edges. The whole point is to find out whether the idea has a pulse before you spend real money making it bulletproof.</p>
+
+    <p>Vibe-coded MVPs are <em>excellent</em> for that. Use the JPMorgan founder guide, the YC playbook, any of the 2026 startup writeups — they all say the same thing. <a href="https://www.jpmorgan.com/insights/technology/artificial-intelligence/vibe-coding-a-guide-for-startups-and-founders" target="_blank" rel="noopener">Vibe code to validate. Hire engineers to scale.</a> Those are two different phases of the same business. The criticism collapses them into one and pretends nobody can tell the difference. Most of us can. I can.</p>
+
+    <p>The 96% of developers who don't fully trust AI-generated code? Good. Don't. The 23% of frontend devs who actually review AI output for security before shipping? That number should be higher, and it will be, because the tools and the norms around them are eighteen months old. Every category of software went through this. Remember when "anyone can build a website on Squarespace" was an insult? Remember when a website used to cost $40K?</p>
+
+    <blockquote>
+      <p>The surface area of buildable software just got dramatically bigger. The amount of useful software in the world goes up. The work for real engineers — to harden, secure, refactor what we build — also goes up. Nobody loses here. Unless the point was the gate.</p>
+    </blockquote>
+
+    <h2>Zoom out. It's not just the code people are mad about.</h2>
+
+    <p>And it's not just vibe coding catching this energy. Open the same threads and you'll find every flavor of AI dismissal stacked on top of each other. <em>"It's just an LLM."</em> <em>"It's cheating."</em> <em>"You don't actually own the IP."</em> <em>"The data centers are boiling the oceans."</em> Each one of those is a real conversation worth having. I'm not here to tell you the concerns are fake — some of them are deeply legitimate, especially the resource and energy ones.</p>
+
+    <p>But the volume on the criticism has completely drowned out what is, to me, the much more interesting story: what people are quietly building with these tools and putting into their actual lives, right now, this month.</p>
+
+    <p>I'm in rooms almost every week — meetups, women's circles, fractional ops groups, indie founder dinners, AI-curious-newcomer sessions — and the rooms are full of receipts. A creative running a custom database for her portfolio and client work, built so she finally owns the asset her career sits on top of. A parent prototyping a kid-safety application because the off-the-shelf ones don't actually fit how her family uses devices. A founder shipping a city-specific tool to solve a local problem her municipality hasn't gotten around to. A team building a real-time legislation tracker so regular people can actually follow what's about to land on them. None of these people are on TechCrunch. None of them are at OpenAI DevDay. They're just shipping.</p>
+
+    <p>That story is not the headline. The headline is the data center water usage, the model hallucination du jour, the latest deepfake scandal, the IP lawsuit. All real. All worth covering. But somewhere in the noise, the everyday person — the one who could most benefit from these tools to claw back three hours a week — has been left with the impression that AI is something happening <em>to</em> them, instead of something they could pick up and use tomorrow.</p>
+
+    <blockquote>
+      <p>The conversation we're having about AI is mostly about its risks. The conversation we're not having is what actual people are already doing with it to make their day shorter, their work better, their inbox triaged, their kid's homework finally explained, their idea finally launched.</p>
+    </blockquote>
+
+    <p>That gap is what worries me more than the criticism itself. Because while we're all arguing about whether AI is theft or salvation, a quiet slice of people — disproportionately women, disproportionately mid-career — are just <em>using it</em>. Not waiting for the discourse to land. Not waiting for permission. Not waiting for a sanctioned developer to bless what they've built. They're picking up the tool, finding the part that makes their life easier and getting on with it.</p>
+
+    <p>That's the part I wish more of the coverage was about. Not the hate. Not the hype. The use.</p>
+
+    <h2>About the "you don't own the IP" line.</h2>
+
+    <p>Of all the AI criticisms, this one might drive me the most crazy — because it's the most repeated and the most loosely understood. So let's just untangle what's actually happening when you build something with these tools.</p>
+
+    <p>Every major model provider — OpenAI, Anthropic, Google, go pull up their terms — explicitly assigns IP rights in the outputs to the user. You prompt, you direct, you keep iterating until the output does what you want, and the resulting code, copy, design, whatever it is, belongs to you. That's not legal hand-waving. It's written into the contracts every founder is already clicking through.</p>
+
+    <p>The more interesting question is whether what AI generates is copyrightable in the first place. <a href="https://www.federalregister.gov/documents/2023/03/16/2023-05321/copyright-registration-guidance-works-containing-material-generated-by-artificial-intelligence" target="_blank" rel="noopener">The U.S. Copyright Office has been clear</a>: purely machine-generated output, with no meaningful human involvement, isn't copyrightable. But — and this is the part that keeps getting skipped — the moment you direct, select, arrange, edit, refine and assemble that output into something larger, human authorship is right there. You don't lose the IP because part of the work involved a tool. Otherwise nobody would have ever owned a Photoshop file, a Word doc, or a song built in Ableton.</p>
+
+    <blockquote>
+      <p>The IP that actually matters in a startup is rarely "who wrote line 47 of the React component." It's the idea, the brand, the audience, the customer data, the relationships, the business model. All of which are entirely yours.</p>
+    </blockquote>
+
+    <p>There are real, narrow risks worth knowing about. If a model regurgitates a verbatim chunk of GPL-licensed code, you've got a license issue to clean up. Worth a check, especially before you start charging anyone money. Tooling exists for this — Snyk, GitGuardian, GitHub's own scanners — and it's a solvable, normal cost of doing business. The same way every dev team has had to vet open-source dependencies for the last twenty years.</p>
+
+    <p>And there are the training-data lawsuits — class actions about whether the models should have been trained on a given codebase or library or book at all. Those will run their course in court. The outcome will matter for the model companies. It will not retroactively invalidate the IP of a founder who used the tool in good faith to build something useful.</p>
+
+    <p>What I keep noticing is that the "you don't own the IP" line almost never lands on the actual legal complexity. It gets used as a vibes-based reason to feel skeptical. The same person waving that flag will happily write code with a Stack Overflow tab open, ship features on top of a hundred open-source libraries they never read the license for and lift snippets from a Medium tutorial — none of which they "own" in any deeper sense than what they vibe-coded yesterday morning.</p>
+
+    <p>If you're building something real, the IP that's going to matter in five years is whether your idea connects with a customer, whether you can defend the brand, whether you have a contract with your users, whether your data is protected. Not the line-by-line provenance of your MVP boilerplate.</p>
+
+    <h2>And the part that's a little quieter in these conversations.</h2>
+
+    <p>A huge share of the people picking up these tools right now are women. Women in their 30s, 40s, 50s, with ideas they've been carrying for a decade. Women who already run the household, the calendar, the budget, the soft launch of every life decision in a five-mile radius. Women who absolutely have the product instincts and the customer empathy and the resilience — and who, until 2024, did not have the build budget.</p>
+
+    <p>Watch who's quietly shipping right now. It's not just the 22-year-old Stanford CS grad. It's the mom who finally built the school logistics app she's been wanting since her kid started kindergarten. It's the operator who automated her own job out of existence and turned the automation into a product. It's the strategist who launched the platform she pitched in three different rooms in 2019 and got told "find a CTO."</p>
+
+    <p>The pushback hits this group hardest. Because the message lands as: <em>you weren't allowed before, and now that you are, we'd like you to know that what you're doing doesn't count.</em></p>
+
+    <p>It counts.</p>
+
+    <hr class="section-break" />
+
+    <h2>Frequently asked, briefly answered.</h2>
+
+    <dl class="faq">
+      <dt>What is vibe coding?</dt>
+      <dd>Building software by describing what you want in natural language and letting AI tools generate the code. Platforms like Cursor, Lovable, Replit and Claude let a non-developer direct, edit and ship working software without writing the syntax by hand.</dd>
+
+      <dt>Is vibe coding safe for production?</dt>
+      <dd>Not without review. Studies show 45% of AI-generated code samples carry OWASP Top 10 vulnerabilities, and AI-written code averages 2.74x more vulnerabilities than human-written equivalents. Vibe code is excellent for validating an idea or shipping an MVP to early users. Before you take money from real customers, bring in an engineer to harden the build.</dd>
+
+      <dt>Do you own the IP of code built with AI tools?</dt>
+      <dd>Generally yes. OpenAI, Anthropic and Google all assign output IP to the user in their terms of service. The U.S. Copyright Office requires meaningful human authorship for copyright protection, and a founder who directs, selects, edits and assembles the AI output supplies exactly that. Verbatim regurgitation of licensed code is a narrow, separate risk you can scan for with tools like Snyk, GitGuardian or GitHub's built-in scanners.</dd>
+
+      <dt>What are real things people are building with vibe coding right now?</dt>
+      <dd>Custom databases for creatives, kid-safety applications, city-specific civic tools and real-time legislation trackers — built by founders, parents, operators and small teams who used to be priced out of building anything at all.</dd>
+
+      <dt>Why does the pushback target women founders most?</dt>
+      <dd>Because the people most enabled by these tools are the ones who were locked out of building before. When the bar to even test an idea was a $30K MVP and a technical co-founder, most non-technical women never got the chance. Now that they can build, the framing of vibe coding as "not real coding" lands as gatekeeping.</dd>
+    </dl>
+
+    <hr class="section-break" />
+
+    <h2>What I actually want you to take from this.</h2>
+
+    <p>If you're a developer worried about security in AI-generated code — you're right to be. Write the threat models. Build the linters. Open-source the audit tools. There's a real, valuable, well-paid future for engineers who help vibe-coded apps grow up. That's a constructive lane and a lot of people are already in it.</p>
+
+    <p>If you're a founder vibe coding your way to an MVP — keep going. <em>And</em> know what you have. A vibe-coded app is a prototype with a pulse. It is enough to validate, enough to test, enough to put in front of ten real users and learn something. It is not yet a production system. When you have proof the idea has legs, get a real engineer on it before you take money from real customers. That's not gatekeeping. That's just the next stage of the build.</p>
+
+    <p>And if you're the person sharpening a quote-tweet about how vibe coders are going to "find out the hard way" — ask yourself, honestly, whether you were equally loud about the $50K wall that locked half the people with good ideas out of the room for the last twenty years. If the answer is no, then your concern isn't really about code quality. It's about who gets to call themselves a builder. And that argument was always going to lose.</p>
+
+    <p><strong>The gate is open. We're walking through it. The receipts on what we build will speak for themselves — same way yours did.</strong></p>
+
+  </article>
+
+  <!-- ARTICLE FOOTER -->
+  <footer class="article-footer fade-up">
+    <div class="tags-row">
+      <span class="tag">Vibe Coding</span>
+      <span class="tag">Women in Tech</span>
+      <span class="tag">Founders</span>
+      <span class="tag">MVP</span>
+      <span class="tag">Gatekeeping</span>
+    </div>
+    <div class="author-card">
+      <div class="author-avatar">B</div>
+      <div class="author-info">
+        <h4>Blagica Bottigliero</h4>
+        <p>Emmy-winning media creator and fractional growth strategist with 25+ years at the intersection of marketing, technology and culture. Founder of Zlato. Building things at 50.</p>
+        <div class="author-links">
+          <a href="https://blagica.com">blagica.com</a>
+          <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co</a>
+          <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium</a>
+          <a href="https://www.linkedin.com/in/blagicabottigliero/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-row fade-up">
+    <a class="back-link" href="/blog/">← All Posts</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Blagica Bottigliero</p>
+  <div class="footer-links">
+    <a href="https://blagica.com">blagica.com</a>
+    <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co</a>
+    <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium ↗</a>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+      }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+<script>
+  (function(){
+    var h = document.getElementById('hamburger');
+    var n = document.getElementById('nav-links');
+    if (!h || !n) return;
+    h.addEventListener('click', function(){ h.classList.toggle('open'); n.classList.toggle('mobile-open'); });
+    n.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ h.classList.remove('open'); n.classList.remove('mobile-open'); }); });
+  })();
+</script>
+</body>
+</html>

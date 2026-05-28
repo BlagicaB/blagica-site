@@ -125,17 +125,48 @@
       .stat-row { flex-direction: column; }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+  /* UNIFIED NAV — matches blagica.com home */
+  nav { position: sticky; top: 0; z-index: 100; background: #fff; backdrop-filter: none; border-bottom: 1px solid #f0e0e8; display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; height: 64px; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #D4176A; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+  .nav-links a { text-decoration: none; color: #2A2A2A; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: #D4176A; }
+  .nav-cta { background: #D4176A; color: #fff; padding: 0.55rem 1.1rem; text-decoration: none; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s; display: inline-block; border: 2px solid #D4176A; }
+  .nav-cta:hover { background: #b01258; }
+  .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 24px; height: 18px; background: none; border: none; cursor: pointer; padding: 0; }
+  .hamburger span { display: block; height: 2px; background: #0F0F0F; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  @media (max-width: 960px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .nav-links.mobile-open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: #fff; border-bottom: 1px solid #f0e0e8; padding: 1.5rem 2rem; gap: 1.25rem; z-index: 99; }
+    .nav-links.mobile-open + .nav-cta { display: inline-block; position: absolute; top: 76px; right: 1.5rem; z-index: 100; }
+  }
+</style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="https://blagica.com">Blagica</a>
-  <ul class="nav-links">
-    <li><a href="https://blagica.com">Home</a></li>
-    <li><a href="https://blagica.com/#work">Work</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="https://zlato.co" target="_blank" rel="noopener">Zlato ↗</a></li>
+  <a class="nav-logo" href="/">blagica bottigliero</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/#tracks">Work With Me</a></li>
+    <li><a href="/#builder">Building</a></li>
+    <li><a href="/#speaking">Speaking</a></li>
+    <li><a href="/#podcast">Podcast</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/aithetable/" style="color:#D4176A;font-weight:700">Learn AI ✦</a></li>
+    <li><a href="/#contact">Contact</a></li>
   </ul>
+  <a class="nav-cta" href="https://calendly.com/blagica-bottigliero/chat" target="_blank" rel="noopener">Let's Talk</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <main class="article-wrap">
@@ -319,5 +350,14 @@
   </div>
 </footer>
 
+<script>
+  (function(){
+    var h = document.getElementById('hamburger');
+    var n = document.getElementById('nav-links');
+    if (!h || !n) return;
+    h.addEventListener('click', function(){ h.classList.toggle('open'); n.classList.toggle('mobile-open'); });
+    n.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ h.classList.remove('open'); n.classList.remove('mobile-open'); }); });
+  })();
+</script>
 </body>
 </html>
