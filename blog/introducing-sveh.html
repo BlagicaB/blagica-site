@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Built an App Called SVEH. It Means Everything. — Blagica Bottigliero</title>
+  <meta name="description" content="I'm the queen of lists, and I was still drowning. So I built the one-stop life command center I couldn't find anywhere — family, finances, health, the people I love. It's called SVEH. It's in beta. Come break it with me.">
+  <meta name="author" content="Blagica Bottigliero">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blagica.com/blog/introducing-sveh.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="I Built an App Called SVEH. It Means Everything.">
+  <meta property="og:description" content="I'm the queen of lists, and I was still drowning. So I built the one-stop life command center I couldn't find anywhere. It's called SVEH. It's in beta — come break it with me.">
+  <meta property="og:url" content="https://blagica.com/blog/introducing-sveh.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Blagica Bottigliero">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="Blagica Bottigliero">
+  <meta property="article:published_time" content="2026-06-07">
+  <meta property="article:section" content="Building">
+  <meta property="article:tag" content="Building">
+  <meta property="article:tag" content="Women">
+  <meta property="article:tag" content="Cognitive Load">
+  <meta property="article:tag" content="Vibe Coding">
+  <meta property="article:tag" content="Apps">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="I Built an App Called SVEH. It Means Everything.">
+  <meta name="twitter:description" content="I'm the queen of lists, and I was still drowning. So I built the one-stop life command center I couldn't find anywhere. It's called SVEH — and it's in beta.">
+  <meta name="twitter:site" content="@baborules">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #E8A0A8;
+      --pink-deep:  #C45C72;
+      --pink-pale:  #FDF0F2;
+      --ink:        #1A1118;
+      --ink-soft:   #5A4A52;
+      --rule:       #EAD8DC;
+      --white:      #FFFFFF;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5vw;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--pink-deep); }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 680px; margin: 0 auto; padding: 0 5vw; }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3rem;
+    }
+    .article-category {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pink-deep);
+      margin-bottom: 1rem;
+    }
+    .article-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .article-header h1 em { font-style: italic; color: var(--pink-deep); }
+    .article-deck {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .article-meta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    .author-line { display: flex; align-items: center; gap: 0.6rem; }
+    .author-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 0.85rem;
+      color: white;
+    }
+    .author-name { font-size: 0.88rem; font-weight: 500; }
+    .meta-sep { color: var(--rule); }
+    .article-date, .article-read { font-size: 0.82rem; color: var(--ink-soft); }
+
+    /* HERO */
+    .article-hero {
+      background: linear-gradient(150deg, var(--pink) 0%, var(--pink-deep) 100%);
+      border-radius: 3px;
+      height: 300px;
+      margin-bottom: 3rem;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.92);
+    }
+    .article-hero .hero-mark {
+      font-family: 'DM Serif Display', serif;
+      font-size: 4.5rem;
+      letter-spacing: 0.1em;
+      line-height: 1;
+    }
+    .article-hero .hero-sub {
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ARTICLE BODY */
+    .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink); margin-bottom: 4rem; }
+    .article-body p { margin-bottom: 1.6rem; }
+    .article-body h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.65rem; line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin: 2.75rem 0 1rem;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--pink-deep);
+      margin: 2.5rem 0;
+      padding: 1.25rem 1.75rem;
+      background: var(--pink-pale);
+      border-radius: 0 3px 3px 0;
+    }
+    .article-body blockquote p {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem; line-height: 1.5;
+      font-style: italic; color: var(--ink); margin: 0;
+    }
+    .article-body a { color: var(--pink-deep); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { text-decoration: none; }
+    .article-body strong { font-weight: 500; }
+    .article-body em { font-style: italic; }
+    .article-body ul { margin: 0 0 1.6rem 1.25rem; }
+    .article-body ul li { margin-bottom: 0.6rem; padding-left: 0.35rem; }
+    hr.section-break { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    /* STAT CARDS */
+    .stat-row {
+      display: flex;
+      gap: 1.25rem;
+      margin: 2.5rem 0;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      flex: 1;
+      min-width: 180px;
+      background: var(--pink-pale);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--pink-deep);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+    }
+
+    /* CALLOUT */
+    .callout {
+      background: var(--pink-pale);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--pink-deep);
+      border-radius: 0 3px 3px 0;
+      padding: 1.75rem 2rem;
+      margin: 2.75rem 0;
+    }
+    .callout h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+    .callout p { font-size: 0.95rem; line-height: 1.7; color: var(--ink-soft); margin-bottom: 0; }
+    .callout .callout-cta {
+      display: inline-block;
+      margin-top: 1.1rem;
+      background: #D4176A;
+      color: #fff !important;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none !important;
+      border-radius: 2px;
+    }
+    .callout .callout-cta:hover { background: #b01258; }
+
+    /* ARTICLE FOOTER */
+    .article-footer { margin-bottom: 4rem; }
+    .tags-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .tag {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: var(--pink-pale); color: var(--pink-deep);
+      padding: 0.35rem 0.75rem; border-radius: 2px;
+    }
+    .author-card {
+      background: var(--pink-pale); border: 1px solid var(--rule);
+      border-radius: 3px; padding: 2rem;
+      display: flex; gap: 1.5rem; align-items: flex-start;
+    }
+    .author-avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+      color: white; flex-shrink: 0;
+    }
+    .author-info h4 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .author-info p { font-size: 0.88rem; line-height: 1.6; color: var(--ink-soft); margin-bottom: 0.75rem; }
+    .author-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .author-links a { font-size: 0.78rem; font-weight: 500; color: var(--pink-deep); text-decoration: none; letter-spacing: 0.04em; }
+    .author-links a:hover { text-decoration: underline; }
+
+    /* BACK LINK */
+    .back-row { padding: 0 0 4rem; text-align: center; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-soft);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--pink-deep); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--rule); padding: 2rem 5vw;
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    footer p { font-size: 0.8rem; color: var(--ink-soft); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    footer a { font-size: 0.8rem; color: var(--pink-deep); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .author-card { flex-direction: column; gap: 1rem; }
+      .nav-links { gap: 1.25rem; }
+      .stat-row { flex-direction: column; }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+  /* UNIFIED NAV — matches blagica.com home */
+  nav { position: sticky; top: 0; z-index: 100; background: #fff; backdrop-filter: none; border-bottom: 1px solid #f0e0e8; display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; height: 64px; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #D4176A; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+  .nav-links a { text-decoration: none; color: #2A2A2A; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: #D4176A; }
+  .nav-cta { background: #D4176A; color: #fff; padding: 0.55rem 1.1rem; text-decoration: none; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s; display: inline-block; border: 2px solid #D4176A; }
+  .nav-cta:hover { background: #b01258; }
+  .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 24px; height: 18px; background: none; border: none; cursor: pointer; padding: 0; }
+  .hamburger span { display: block; height: 2px; background: #0F0F0F; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  @media (max-width: 960px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .nav-links.mobile-open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: #fff; border-bottom: 1px solid #f0e0e8; padding: 1.5rem 2rem; gap: 1.25rem; z-index: 99; }
+    .nav-links.mobile-open + .nav-cta { display: inline-block; position: absolute; top: 76px; right: 1.5rem; z-index: 100; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">blagica bottigliero</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/#tracks">Work With Me</a></li>
+    <li><a href="/#builder">Building</a></li>
+    <li><a href="/#speaking">Speaking</a></li>
+    <li><a href="/#podcast">Podcast</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/aithetable/" style="color:#D4176A;font-weight:700">Learn AI ✦</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="https://calendly.com/blagica-bottigliero/chat" target="_blank" rel="noopener">Let's Talk</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main class="article-wrap">
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header">
+    <p class="article-category">Building · Women · Cognitive Load</p>
+    <h1>I Built an App Called SVEH. It Means <em>Everything.</em></h1>
+    <p class="article-deck">I'm the queen of lists, and I was still drowning. So I built the one-stop command center I couldn't find anywhere — for my family, my finances, my health, and all the people I love and look after. It's in beta. Come break it with me.</p>
+    <div class="article-meta">
+      <div class="author-line">
+        <div class="author-dot">B</div>
+        <span class="author-name">Blagica Bottigliero</span>
+      </div>
+      <span class="meta-sep">·</span>
+      <span class="article-date">June 2026</span>
+      <span class="meta-sep">·</span>
+      <span class="article-read">8 min read</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="article-hero">
+    <span class="hero-mark">sveh</span>
+    <span class="hero-sub">everything · све</span>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+
+    <p>Let me establish my credentials before I confess anything.</p>
+
+    <p>I am the queen of lists. The checklist, the to-do list, the master list, the list <em>of</em> lists. I have packing templates. I have a color system. I have, at various points, run my entire household, my consulting practice, and a creative project off three different apps, two notebooks, and a running thread of texts to myself. If organizing were an Olympic sport, I'd have medaled by 50.</p>
+
+    <p>And I was still drowning.</p>
+
+    <p>That's the part nobody tells you. You can be exceptional at the system and still be crushed by the fact that the system lives in eleven different places. I'd open one app for the family calendar. Another to see where we actually were on money. A third for the kids' school stuff. My Notes app for the running log of — and I cannot stress how unglamorous this is — my <em>parents' medications and their doctors' names</em>. A separate note for my friends' kids and which parent goes with which kid, because I refuse to be the woman who blanks on a child's name at a birthday party.</p>
+
+    <p>I turned 50 in April. And somewhere in the middle of toggling between all of it at 10pm, exhausted, I had the thought that started this whole thing: <em>I am doing everything right and I am still the integration layer holding my entire life together with my own memory.</em></p>
+
+    <p>So I built the app I couldn't find. It's called <strong>SVEH</strong>.</p>
+
+    <h2>First, the name</h2>
+
+    <p>SVEH comes from <em>sve</em> (све) — the word for <strong>"everything"</strong> in Macedonian and Serbian. I'm Macedonian. It's the word my family uses when they mean <em>all of it, the whole thing, the works</em>. "Имаш сѐ?" — "Do you have everything?" It's what my mother asked me before I walked out the door for thirty years.</p>
+
+    <p>That's the entire pitch in one word. Everything, in one place. I spelled it <em>sveh</em> so it would survive an English keyboard and an app store search, but in my head it's always pronounced the way my grandmother said it.</p>
+
+    <h2>I tried the other apps. I tried a lot of them.</h2>
+
+    <p>I want to be very clear that I didn't set out to build software. I set out to <em>stop building software in my own head every single day.</em> I genuinely tried to buy my way out of this problem first.</p>
+
+    <p>I tried <a href="https://www.cnbc.com/select/best-budgeting-apps/" target="_blank" rel="noopener">YNAB</a> — and I love its discipline, the give-every-dollar-a-job philosophy is genuinely good. But, as more than one review will tell you, <a href="https://robberger.com/ynab-alternatives/" target="_blank" rel="noopener">the features end at budgeting</a>. Want to track investments, or your health, or who's picking up the kid on Thursday? That's a different app. I tried <a href="https://www.knowyourdosh.com/blog/best-family-financial-management-software" target="_blank" rel="noopener">Monarch Money</a> for the money side. I tried <a href="https://ourcal.com/blog/best-family-calendar-app-in-2025-and-other-must-have-apps-for-families" target="_blank" rel="noopener">Cozi and OurCal</a> for the family calendar. I tried <a href="https://play.google.com/store/apps/details?id=com.familywall&hl=en_US" target="_blank" rel="noopener">FamilyWall</a>, which gets closer than most. I built elaborate <a href="https://www.notion.com" target="_blank" rel="noopener">Notion</a> dashboards that I then had to maintain like a second job. I tried Google Calendar with seventeen sub-calendars in fourteen colors.</p>
+
+    <p>Here's the punchline I kept hitting, and it turns out the experts agree with me. When a respected 2025 family-organization roundup lays out its actual recommendation, it's this: use <a href="https://ourcal.com/blog/best-family-calendar-app-in-2025-and-other-must-have-apps-for-families" target="_blank" rel="noopener">a calendar app, <em>and</em> a meal planner, <em>and</em> a task manager, <em>and</em> a budgeting app</a>. Four apps. As the recommendation. For one life.</p>
+
+    <blockquote>
+      <p>Nobody had built the one-fell-swoop, one-stop shop. The official advice was to glue four apps together and call it a system. That's not a system. That's homework.</p>
+    </blockquote>
+
+    <p>And the gluing is not free. I assumed the cost of hopping between apps was a little annoyance. It is not little. The average company now runs <a href="https://speakwiseapp.com/blog/workplace-technology-overload-statistics" target="_blank" rel="noopener">over 100 apps</a>, and a Harvard Business Review study found workers <a href="https://hbr.org/2022/08/how-much-time-and-energy-do-we-waste-toggling-between-applications" target="_blank" rel="noopener">toggle between apps and websites about 1,200 times a day</a> — adding up to nearly four hours a week just reorienting, which works out to <a href="https://speakwiseapp.com/blog/workplace-technology-overload-statistics" target="_blank" rel="noopener">five working weeks a year</a> lost to context-switching. Every switch spikes stress hormones and chips away at focus. I was doing that to myself at home, after hours, for free, on top of everything else.</p>
+
+    <h2>Then I went looking for why I felt this way — and found the data</h2>
+
+    <p>I'm a marketer by trade, so I don't trust a feeling until I've checked whether other people have it too. I started reading. And what I found reframed the entire project from "Blagica's personal organization quirk" into something I think a lot of people are quietly carrying.</p>
+
+    <p>There's a name for the invisible work I was doing: <strong>cognitive load</strong>, or the mental load. It's not the chores. It's the <em>thinking about</em> the chores — the anticipating, tracking, planning, remembering, and re-planning that keeps a life running. And the research on who carries it is brutal and recent.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-number">2,133</div>
+        <div class="stat-label">US parents studied in October 2025 — the mental load stayed with mothers regardless of career or income (Univ. of Bath &amp; Melbourne)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">~4 hrs</div>
+        <div class="stat-label">lost every week just toggling between apps to reorient — roughly five work-weeks a year (Harvard Business Review)</div>
+      </div>
+    </div>
+
+    <p>An <a href="https://www.bath.ac.uk/announcements/successful-career-women-still-shoulder-the-majority-of-the-mental-load-at-home-new-research/" target="_blank" rel="noopener">October 2025 study from the University of Bath and the University of Melbourne</a>, looking at over 2,100 US parents, found that the unseen mental work of organizing family life stays with mothers <em>regardless</em> of their career or financial success. The researchers coined a phrase for it I can't stop thinking about: <strong>"gendered cognitive stickiness."</strong> The load doesn't transfer. You can out-earn it and it still clings to you.</p>
+
+    <p>It's not just one study having a bad day. A <a href="https://www.frontiersin.org/journals/sociology/articles/10.3389/fsoc.2025.1683261/full" target="_blank" rel="noopener">December 2025 study of 2,309 mothers in Italy</a> found women disproportionately carry both the cognitive <em>and</em> emotional dimensions of the load, and that it spills directly into their paid work — most of all for employed, college-educated women. New <a href="https://www.wpr.org/news/women-carry-households-mental-load-wisconsin-researcher" target="_blank" rel="noopener">2025 research out of UW–Madison</a> is putting hard receipts behind something women have said for decades. And this load is <a href="https://link.springer.com/article/10.1007/s00737-024-01490-w" target="_blank" rel="noopener">directly linked to exhaustion, sleep disruption, anxiety, and burnout</a> — not because women are fragile, but because the work is real, constant, and invisible to everyone but the person doing it.</p>
+
+    <h2>And no — this is not only a "moms" problem</h2>
+
+    <p>I need to say this loudly, because it's the part the conversation always forgets. If you don't have kids, you are not exempt from this. You may not even feel allowed to claim it.</p>
+
+    <p>Women without children are very often the ones <a href="https://everywomanallthings.org/women-and-caregiving-the-unseen-backbone-of-care-economies/" target="_blank" rel="noopener">holding up the care economy</a> — the default caregiver for aging parents, the one tracking a sibling's chaos, the one managing complex finances and logistics solo with no one to split the second-guessing. The cognitive labor of <a href="https://www.newamerica.org/the-thread/sustainable-caregiving-us-women-mental-load/" target="_blank" rel="noopener">managing appointments, medications, and someone else's whole well-being</a> doesn't require a child. It requires that you love people and pay attention. Which, in my experience, women do relentlessly.</p>
+
+    <p>And then there's my exact demographic. <a href="https://wellbeing.uiowa.edu/news/2025/10/sandwiching-parenting-caregiving-and-mental-load-we-carry" target="_blank" rel="noopener">Roughly 23% of US adults are the "sandwich generation"</a> — raising kids and supporting aging parents at the same time. That's the note in my phone with my mother's medications. That's the separate list of my dad's doctors. I am running a small, unfunded operations department for three generations at once, and so are millions of other women who'd never call it that.</p>
+
+    <h2>The multitasking myth — and the part that's actually true</h2>
+
+    <p>Here's where I want to be careful, because I love a "women are amazing multitaskers" line as much as anyone, and it's a little bit of a trap.</p>
+
+    <p>The honest version: <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0220150" target="_blank" rel="noopener">controlled studies don't find that women's brains are naturally <em>better</em> at task-switching</a>. Men and women perform about the same in the lab. So the "you're just wired for this, sweetie" story is, scientifically, mostly a way to hand women more work.</p>
+
+    <p>But here's the part that <em>is</em> unambiguously true and genuinely extraordinary: women do it more, under more pressure, with less support, and we keep it all running anyway. That's not a magic gift. That's a trained, hard-won, gravely under-resourced skill. We are not "naturally" amazing multitaskers. We are amazing because we became multitaskers out of necessity and got <em>good</em> at it. That deserves better tools — not a coffee mug that says "she believed she could so she did."</p>
+
+    <blockquote>
+      <p>Men managing this many domains got investors, teams, and infrastructure. Women got told to simplify. I don't need to simplify. I need a better interface.</p>
+    </blockquote>
+
+    <h2>So what is SVEH, actually?</h2>
+
+    <p>SVEH is the one-stop command center for everything you're holding in your head. Not a prettier to-do list. A place where the whole machine of your life finally lives together and — this is the word I kept using while I built it — <em>sings</em>. Where the pieces talk to each other instead of sitting in eleven apps that have never been introduced.</p>
+
+    <p>Under one roof, SVEH is where you keep:</p>
+
+    <ul>
+      <li><strong>The family calendar</strong> — the real one, with the who's-getting-whom and the appointments that move three times.</li>
+      <li><strong>The money</strong> — a single honest view of where things actually stand, without opening a separate app and bracing yourself.</li>
+      <li><strong>Health</strong> — yours, and the people you look after. Medications, doctors, the next appointment, the thing you keep meaning to follow up on.</li>
+      <li><strong>The people</strong> — the part I'm proudest of. Your friends' kids and which parent goes with which kid. Your parents' details. The human database you've been keeping in your memory and your Notes app, finally given a real home.</li>
+    </ul>
+
+    <p>It started as the app I built for <em>me</em>, to solve <em>my</em> problem, at the most selfish and therefore most honest level. And the second I started showing it to people, the response was the same flavor of relief every time: <em>"wait, it does all of it? In one place?"</em> Yes. That's the whole point. <em>Sve.</em></p>
+
+    <h2>It's in beta. This is me, launching it anyway.</h2>
+
+    <p>Full honesty, because that's the only mode I write in: SVEH is in beta right now. A group of generous people are already in it, using it, telling me what's broken and what they love. I have a list (of course I have a list) of integrations I'm wiring in — and I'll be heads-down tonight building more of them.</p>
+
+    <p>I could keep polishing in private forever. That's the comfortable trap for someone like me. But I've now talked to enough women — moms and not-moms, the sandwiched and the solo, the queens of lists who are quietly exhausted — to know this isn't just my problem. It's a real one. And the cost of context-switching, of carrying the whole map in your head, is too high to keep this to myself while I tinker.</p>
+
+    <p>So consider this the public version of saying it out loud so I have to follow through: <strong>SVEH is launching.</strong> If you've ever been the integration layer for your own life, I built this for you.</p>
+
+    <div class="callout">
+      <h4>Come break it with me ✦</h4>
+      <p>SVEH is in open-ish beta and I want more people in it — especially if you're skeptical, picky, or have tried every other app and rage-quit. I want your real feedback: what's missing, what's clunky, what you'd actually use every day. The beta is free.</p>
+      <a class="callout-cta" href="https://calendly.com/blagica-bottigliero/chat" target="_blank" rel="noopener">Get me into the beta →</a>
+    </div>
+
+    <hr class="section-break">
+
+    <p>I'm 50. I'm the queen of lists. And I finally stopped accepting that "use four apps and white-knuckle the rest" was the best anyone could do for the people who keep everything running.</p>
+
+    <p>It's called SVEH. It means everything. That's the promise, and now I'm going to go build the rest of it.</p>
+
+    <p><strong>Имаш сѐ? Soon, you will.</strong></p>
+
+  </article>
+
+  <!-- ARTICLE FOOTER -->
+  <footer class="article-footer">
+    <div class="tags-row">
+      <span class="tag">Building</span>
+      <span class="tag">Women</span>
+      <span class="tag">Cognitive Load</span>
+      <span class="tag">Vibe Coding</span>
+      <span class="tag">Apps</span>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">B</div>
+      <div class="author-info">
+        <h4>Blagica Bottigliero</h4>
+        <p>Emmy-winning media creator and fractional growth strategist with 25+ years at the intersection of marketing, technology, and culture. Founder of Zlato. Building SVEH. Building things at 50.</p>
+        <div class="author-links">
+          <a href="https://blagica.com">blagica.com</a>
+          <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co ↗</a>
+          <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium ↗</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-row">
+    <a class="back-link" href="/blog/">← All Posts</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Blagica Bottigliero</p>
+  <div class="footer-links">
+    <a href="https://blagica.com">blagica.com</a>
+    <a href="https://zlato.co" target="_blank" rel="noopener">zlato.co</a>
+    <a href="https://medium.com/@blagica" target="_blank" rel="noopener">Medium ↗</a>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var h = document.getElementById('hamburger');
+    var n = document.getElementById('nav-links');
+    if (!h || !n) return;
+    h.addEventListener('click', function(){ h.classList.toggle('open'); n.classList.toggle('mobile-open'); });
+    n.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ h.classList.remove('open'); n.classList.remove('mobile-open'); }); });
+  })();
+</script>
+</body>
+</html>
