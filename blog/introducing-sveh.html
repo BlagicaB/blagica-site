@@ -16,8 +16,9 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Blagica Bottigliero">
   <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://blagica.com/sveh-hero.jpg">
   <meta property="article:author" content="Blagica Bottigliero">
-  <meta property="article:published_time" content="2026-06-07">
+  <meta property="article:published_time" content="2026-06-10">
   <meta property="article:section" content="Building">
   <meta property="article:tag" content="Building">
   <meta property="article:tag" content="Women">
@@ -30,6 +31,7 @@
   <meta name="twitter:title" content="I Built an App Called SVEH. It Means Everything.">
   <meta name="twitter:description" content="I'm the queen of lists, and I was still drowning. So I built the one-stop life command center I couldn't find anywhere. It's called SVEH — and it's in beta.">
   <meta name="twitter:site" content="@baborules">
+  <meta name="twitter:image" content="https://blagica.com/sveh-hero.jpg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,26 +137,23 @@
     .article-date, .article-read { font-size: 0.82rem; color: var(--ink-soft); }
 
     /* HERO */
-    .article-hero {
-      background: linear-gradient(150deg, var(--pink) 0%, var(--pink-deep) 100%);
+    .hero-visual {
       border-radius: 3px;
-      height: 300px;
-      margin-bottom: 3rem;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 0.5rem;
-      color: rgba(255,255,255,0.92);
+      margin-bottom: 1rem;
+      overflow: hidden;
     }
-    .article-hero .hero-mark {
-      font-family: 'DM Serif Display', serif;
-      font-size: 4.5rem;
-      letter-spacing: 0.1em;
-      line-height: 1;
+    .hero-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 3px;
     }
-    .article-hero .hero-sub {
+    .hero-caption {
       font-size: 0.78rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+      color: var(--ink-soft);
+      font-style: italic;
+      margin-bottom: 3rem;
     }
 
     /* ARTICLE BODY */
@@ -350,7 +349,6 @@
   <header class="article-header">
     <p class="article-category">Building · Women · Cognitive Load</p>
     <h1>I Built an App Called SVEH. It Means <em>Everything.</em></h1>
-    <p class="article-deck">I'm the queen of lists, and I was still drowning. So I built the one-stop command center I couldn't find anywhere — for my family, my finances, my health, and all the people I love and look after. It's in beta. Come break it with me.</p>
     <div class="article-meta">
       <div class="author-line">
         <div class="author-dot">B</div>
@@ -364,21 +362,21 @@
   </header>
 
   <!-- HERO -->
-  <div class="article-hero">
-    <span class="hero-mark">sveh</span>
-    <span class="hero-sub">everything · сѐ</span>
+  <div class="hero-visual">
+    <img src="/sveh-hero.jpg" alt="A woman sits in her kitchen with a cup of coffee, surrounded by floating holographic notes — grocery list, the kids' appointments, mortgage and bills, piano lessons, a partner's flight, the bake sale — the invisible mental load made visible.">
   </div>
+  <p class="hero-caption">The invisible load, made visible: every floating note is one more thing a woman is holding in her head at once.</p>
 
   <!-- ARTICLE BODY -->
   <article class="article-body">
 
     <p>Let me establish my credentials before I confess anything.</p>
 
-    <p>I am the queen of lists. The checklist, the to-do list, the master list, the list <em>of</em> lists. I have packing templates. I have a color system. I have, at various points, run my entire household, my consulting practice, and a creative project off three different apps, two notebooks, and a running thread of texts to myself. If organizing were an Olympic sport, I'd have medaled by 50.</p>
+    <p>I am the queen of lists. The checklist, the to-do list, the master list, the list <em>of</em> lists. I have packing templates. I have a color system. I have, at various points, run my entire household, my consulting practice, and a creative project off three different apps, two notebooks and a running thread of texts to myself. If organizing were an Olympic sport, I'd have medaled by 50.</p>
 
     <p>And I was still drowning.</p>
 
-    <p>That's the part nobody tells you. You can be exceptional at the system and still be crushed by the fact that the system lives in eleven different places. I'd open one app for the family calendar. Another to see where we actually were on money. A third for the kids' school stuff. My Notes app for the running log of — and I cannot stress how unglamorous this is — my <em>parents' medications and their doctors' names</em>. A separate note for my friends' kids and which parent goes with which kid, because I refuse to be the woman who blanks on a child's name at a birthday party.</p>
+    <p>That's the part nobody tells you. You can be exceptional at the system and still be crushed by the fact that the system lives in eleven different places. I'd open one app for the family calendar. Another to see where we actually were on money. A third for the kids' school stuff. My Notes app for the running log of random things to share with my husband. A separate note for my friends' kids and which parent goes with which kid, because I refuse to be the woman who blanks on a child's name at a birthday party.</p>
 
     <p>I turned 50 in April. And somewhere in the middle of toggling between all of it at 10pm, exhausted, I had the thought that started this whole thing: <em>I am doing everything right and I am still the integration layer holding my entire life together with my own memory.</em></p>
 
@@ -386,9 +384,9 @@
 
     <h2>First, the name</h2>
 
-    <p>SVEH comes from <strong>сѐ</strong> (<em>sè</em>) — the Macedonian word for <strong>"everything."</strong> (Our Serbian cousins say <em>sve</em>; same root, same idea.) I'm Macedonian, and <em>сѐ</em> is the word my family reaches for when they mean <em>all of it, the whole thing, the works</em>. "Имаш сѐ?" — "Do you have everything?" It's what my mother asked me before I walked out the door for thirty years.</p>
+    <p>SVEH comes from <strong>svѐ</strong> (<em>svè</em>) — the Macedonian word for <strong>"everything."</strong> I'm Macedonian, and <em>svѐ</em> is the word my family reaches for when they mean <em>all of it, the whole thing, the works</em>. "Имаш svѐ?" — "Do you have everything?" It's what my mother asked me before I walked out the door.</p>
 
-    <p>That's the entire pitch in one word. Everything, in one place. I stylized it <em>SVEH</em> — a nod to how the word sounds across the region — so it would survive an English keyboard and an app-store search, but in my head it's always <em>сѐ</em>, pronounced the way my grandmother said it.</p>
+    <p>That's the entire pitch in one word. Everything, in one place. I stylized it <em>SVEH</em> — a nod to how the word sounds across the region — so it would survive an English keyboard and an app-store search, but in my head it's always <em>svѐ</em>.</p>
 
     <h2>I tried the other apps. I tried a lot of them.</h2>
 
@@ -423,15 +421,15 @@
 
     <p>An <a href="https://www.bath.ac.uk/announcements/successful-career-women-still-shoulder-the-majority-of-the-mental-load-at-home-new-research/" target="_blank" rel="noopener">October 2025 study from the University of Bath and the University of Melbourne</a>, looking at over 2,100 US parents, found that the unseen mental work of organizing family life stays with mothers <em>regardless</em> of their career or financial success. The researchers coined a phrase for it I can't stop thinking about: <strong>"gendered cognitive stickiness."</strong> The load doesn't transfer. You can out-earn it and it still clings to you.</p>
 
-    <p>It's not just one study having a bad day. A <a href="https://www.frontiersin.org/journals/sociology/articles/10.3389/fsoc.2025.1683261/full" target="_blank" rel="noopener">December 2025 study of 2,309 mothers in Italy</a> found women disproportionately carry both the cognitive <em>and</em> emotional dimensions of the load, and that it spills directly into their paid work — most of all for employed, college-educated women. New <a href="https://www.wpr.org/news/women-carry-households-mental-load-wisconsin-researcher" target="_blank" rel="noopener">2025 research out of UW–Madison</a> is putting hard receipts behind something women have said for decades. And this load is <a href="https://link.springer.com/article/10.1007/s00737-024-01490-w" target="_blank" rel="noopener">directly linked to exhaustion, sleep disruption, anxiety, and burnout</a> — not because women are fragile, but because the work is real, constant, and invisible to everyone but the person doing it.</p>
+    <p>It's not just one study having a bad day. A <a href="https://www.frontiersin.org/journals/sociology/articles/10.3389/fsoc.2025.1683261/full" target="_blank" rel="noopener">December 2025 study of 2,309 mothers in Italy</a> found women disproportionately carry both the cognitive <em>and</em> emotional dimensions of the load, and that it spills directly into their paid work — most of all for employed, college-educated women. New <a href="https://www.wpr.org/news/women-carry-households-mental-load-wisconsin-researcher" target="_blank" rel="noopener">2025 research out of UW–Madison</a> is putting hard receipts behind something women have said for decades. And this load is <a href="https://link.springer.com/article/10.1007/s00737-024-01490-w" target="_blank" rel="noopener">directly linked to exhaustion, sleep disruption, anxiety and burnout</a> — not because women are fragile, but because the work is real, constant, and invisible to everyone but the person doing it.</p>
 
     <h2>And no — this is not only a "moms" problem</h2>
 
     <p>I need to say this loudly, because it's the part the conversation always forgets. If you don't have kids, you are not exempt from this. You may not even feel allowed to claim it.</p>
 
-    <p>Women without children are very often the ones <a href="https://everywomanallthings.org/women-and-caregiving-the-unseen-backbone-of-care-economies/" target="_blank" rel="noopener">holding up the care economy</a> — the default caregiver for aging parents, the one tracking a sibling's chaos, the one managing complex finances and logistics solo with no one to split the second-guessing. The cognitive labor of <a href="https://www.newamerica.org/the-thread/sustainable-caregiving-us-women-mental-load/" target="_blank" rel="noopener">managing appointments, medications, and someone else's whole well-being</a> doesn't require a child. It requires that you love people and pay attention. Which, in my experience, women do relentlessly.</p>
+    <p>Women without children are very often the ones <a href="https://everywomanallthings.org/women-and-caregiving-the-unseen-backbone-of-care-economies/" target="_blank" rel="noopener">holding up the care economy</a> — the default caregiver for aging parents, the one tracking a sibling's chaos, the one managing complex finances and logistics solo with no one to split the second-guessing. The cognitive labor of <a href="https://www.newamerica.org/the-thread/sustainable-caregiving-us-women-mental-load/" target="_blank" rel="noopener">managing appointments, medications and someone else's whole well-being</a> doesn't require a child. It requires that you love people and pay attention. Which, in my experience, women do relentlessly.</p>
 
-    <p>And then there's my exact demographic. <a href="https://wellbeing.uiowa.edu/news/2025/10/sandwiching-parenting-caregiving-and-mental-load-we-carry" target="_blank" rel="noopener">Roughly 23% of US adults are the "sandwich generation"</a> — raising kids and supporting aging parents at the same time. That's the note in my phone with my mother's medications. That's the separate list of my dad's doctors. I am running a small, unfunded operations department for three generations at once, and so are millions of other women who'd never call it that.</p>
+    <p>And then there's my exact demographic. <a href="https://wellbeing.uiowa.edu/news/2025/10/sandwiching-parenting-caregiving-and-mental-load-we-carry" target="_blank" rel="noopener">Roughly 23% of US adults are the "sandwich generation"</a> — raising kids and supporting aging parents at the same time. I am running a small, unfunded operations department for three generations at once, and so are millions of other women who'd never call it that.</p>
 
     <h2>The multitasking myth — and the part that's actually true</h2>
 
@@ -458,13 +456,7 @@
       <li><strong>The people</strong> — the part I'm proudest of. Your friends' kids and which parent goes with which kid. Your parents' details. The human database you've been keeping in your memory and your Notes app, finally given a real home.</li>
     </ul>
 
-    <p>It started as the app I built for <em>me</em>, to solve <em>my</em> problem, at the most selfish and therefore most honest level. And the second I started showing it to people, the response was the same flavor of relief every time: <em>"wait, it does all of it? In one place?"</em> Yes. That's the whole point. <em>Sve.</em></p>
-
-    <h2>It's in beta. This is me, launching it anyway.</h2>
-
-    <p>Full honesty, because that's the only mode I write in: SVEH is in beta right now. A group of generous people are already in it, using it, telling me what's broken and what they love. I have a list (of course I have a list) of integrations I'm wiring in — and I'll be heads-down tonight building more of them.</p>
-
-    <p>I could keep polishing in private forever. That's the comfortable trap for someone like me. But I've now talked to enough women — moms and not-moms, the sandwiched and the solo, the queens of lists who are quietly exhausted — to know this isn't just my problem. It's a real one. And the cost of context-switching, of carrying the whole map in your head, is too high to keep this to myself while I tinker.</p>
+    <p>It started as the app I built for <em>me</em>, to solve <em>my</em> problem, at the most selfish and therefore most honest level. And the second I started showing it to people, the response was the same flavor of relief every time: <em>"wait, it does all of it? In one place?"</em> Yes. That's the whole point. <em>Svѐ.</em></p>
 
     <p>So consider this the public version of saying it out loud so I have to follow through: <strong>SVEH is launching.</strong> If you've ever been the integration layer for your own life, I built this for you.</p>
 
@@ -480,7 +472,7 @@
 
     <p>It's called SVEH. It means everything. That's the promise, and now I'm going to go build the rest of it.</p>
 
-    <p><strong>Имаш сѐ? Soon, you will.</strong></p>
+    <p><strong>Имаш svѐ? Soon, you will.</strong></p>
 
   </article>
 
