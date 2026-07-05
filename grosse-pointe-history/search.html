@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search — Grosse Pointe: A Documented History</title>
+<meta name="description" content="Search the documented history of Grosse Pointe's schools, elections and civic disputes.">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">Grosse&nbsp;Pointe<span>.</span> A Documented History</a>
+    <nav class="site-nav">
+      <a href="index.html">Timeline</a>
+      <a href="schools.html">The Schools Saga</a>
+      <a href="cotton.html">The Cotton Era</a>
+      <a href="national.html">National Threads</a>
+      <a href="south-north.html">South vs North</a>
+      <a href="people.html">People</a>
+      <a href="sources.html">Sources</a>
+      <a href="about.html">About</a>
+      <a href="search.html" class="search-link">Search</a>
+      <button id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="search-wrap">
+    <p class="kicker">Search</p>
+    <h1>Search the record</h1>
+    <label for="q" class="visually-hidden"></label>
+    <input id="q" type="search" placeholder="Try: clinic, Cotton, mask, Jeup, canvassers…" autocomplete="off" autofocus>
+    <p id="search-meta" class="search-meta">Loading the search index…</p>
+    <div id="results"></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="bar">
+    <span>A neutral, cited history. Facts are sourced; allegations are labeled as allegations.</span>
+    <span><a href="about.html">Methodology &amp; corrections</a></span>
+  </div>
+</footer>
+<script src="assets/search.js" defer></script>
+</body>
+</html>
