@@ -148,8 +148,8 @@
     "url": "south-north.html#two-schools",
     "section": "South vs North",
     "date": "context",
-    "tags": ["South", "North", "high schools", "rivalry", "equity", "reputation"],
-    "body": "Grosse Pointe operates two public high schools, South and North. South is often treated as the more prestigious of the two. Reporting on the halted North health clinic sharpened long-running questions about how resources and attention are distributed between the two schools."
+    "tags": ["South", "North", "high schools", "rivalry", "equity", "reputation", "test scores", "US News", "graduation"],
+    "body": "Grosse Pointe operates two public high schools, South and North. U.S. News ranks South around #9 in Michigan (about 80% reading and 63% math proficiency, 97% graduation), while North posts a 95% graduation rate and about 70% reading proficiency with math nearer the state average. Both clear state averages; the gap is between very good and excellent. Reporting on the halted North health clinic sharpened questions about how resources are distributed between the schools."
   },
   {
     "title": "The clinic and the funding question",
@@ -158,5 +158,29 @@
     "date": "2023",
     "tags": ["clinic", "North", "funds", "sinking fund", "equity"],
     "body": "The health clinic denied at Grosse Pointe North was blocked partly on the argument that certain district funds could not be used for it. Supporters countered that the sinking fund and grants could lawfully cover construction and operations."
+  },
+  {
+    "title": "By the numbers: Grosse Pointe's academic strengths",
+    "url": "community.html#by-the-numbers",
+    "section": "The Community",
+    "date": "current",
+    "tags": ["test scores", "proficiency", "graduation rate", "ranking", "US News", "Niche", "SchoolDigger", "strengths", "positive"],
+    "body": "Grosse Pointe Public Schools serves about 6,500 students across 12 schools and ranks near the top of Michigan: district math proficiency around 54 percent versus a state average near 34, reading around 64 versus 46, and a graduation rate around 96 percent. Niche grades the district A+ and ranks it #2 in Wayne County; SchoolDigger gives it 5 stars. The disputes elsewhere on this site played out at a district that was, by the numbers, succeeding."
+  },
+  {
+    "title": "The advocates: Alliance for GP Public Schools and WE GP",
+    "url": "community.html#advocates",
+    "section": "The Community",
+    "date": "current",
+    "tags": ["Alliance for GP Public Schools", "WE GP", "Welcoming Everyone Grosse Pointe", "Grosse Pointe Foundation for Public Education", "advocacy", "civic groups", "pride"],
+    "body": "Several organized groups work on behalf of the public schools and community. The Alliance for GP Public Schools is a grassroots volunteer 501(c)(4) that presses for transparency, attends board meetings, and endorses pro-public-education candidates. WE GP, Welcoming Everyone Grosse Pointe, is a civil-rights and inclusion community organization that runs programming including Grosse Pointe Pride. The Grosse Pointe Foundation for Public Education raises money for grants across the district."
+  },
+  {
+    "title": "The pushback against the pro-schools groups",
+    "url": "community.html#pushback",
+    "section": "The Community",
+    "date": "current",
+    "tags": ["pushback", "critics", "Eastside Republican Club", "Moms for Liberty", "partisan", "conservative", "Michigan Capitol Confidential"],
+    "body": "The advocacy groups are not universally embraced. A vocal set of residents, overlapping with the Cotton-aligned board faction and movements like Moms for Liberty, views groups such as the Alliance and WE GP as partisan or activist rather than neutral, and has organized its own efforts including the Eastside Republican Club's Protect Our Grosse Pointe Schools campaign. Both camps claim to act for the kids."
   }
 ]
